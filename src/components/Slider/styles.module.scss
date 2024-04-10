@@ -1,0 +1,38 @@
+@use '@styles' as *;
+
+.wrapper {
+  padding: 5vh 0 25vh;
+  margin-bottom: 10vh;
+  background: var(--color-body);
+  color: var(--color-body-bg);
+  overflow: hidden;
+
+  h2 {
+    margin-bottom: 5vh;
+  }
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.swiper {
+  overflow: visible;
+}
+
+.pagination {
+  bottom: -3vh !important;
+}
+
+.bullet {
+  width: 12px;
+  height: 12px;
+  background: var(--color-primary);
+}
+
+@media(max-width: 920px) {
+  .container {
+    width: 100%;
+  }
+}

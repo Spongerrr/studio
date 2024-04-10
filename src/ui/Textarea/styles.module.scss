@@ -1,0 +1,7 @@
+@use '@styles' as *;
+
+.textarea {
+  resize: none;
+  overflow-y: hidden;
+  @include input;
+}

@@ -1,0 +1,55 @@
+@mixin input {
+  padding: 2vh;
+  outline: none;
+  border: 1px solid var(--color-body);
+  border-radius: 8px;
+  width: 100%;
+}
+
+@mixin info {
+  padding: 1.5vw;
+  width: 24vw;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border: 1px solid var(--color-body);
+  border-radius: 28px;
+
+  a:first-of-type {  // Logo
+    padding: 10vh 2vw;
+    margin-block: 5vh;
+    background: var(--color-gray-300);
+    text-align: center;
+  }
+
+  p,
+  strong {
+    text-align: center;
+  }
+
+  strong:first-of-type {
+    padding-bottom: 1vh;
+  }
+
+  p {
+    text-align: center;
+    padding-bottom: 2vh;
+
+    &:nth-child(2) {
+      padding-bottom: 0;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    max-width: 18vw;
+  }
+
+  @media (max-width: 1300px) {
+    width: 30vw;
+  }
+
+  @media (max-width: 920px) {
+    width: 100%;
+    padding: 5vw 10vw;
+  }
+}

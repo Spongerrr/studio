@@ -1,0 +1,153 @@
+{
+  "paths": {
+    "home": "главная",
+    "projects": "портфолио",
+    "contacts": "контакты"
+  },
+  "services": {
+    "title": "Услуги",
+    "items": [
+      {
+        "id": "001",
+        "title": "Сайты",
+        "isOpen": false,
+        "categories": [
+          "Landing",
+          "Web приложения",
+          "Многостраничные сайты",
+          "Онлайн магазины"
+        ]
+      },
+      {
+        "id": "002",
+        "title": "Дизайн",
+        "isOpen": false,
+        "categories": [
+          "Web дизайн",
+          "Mobile дизайн",
+          "Логотипы",
+          "Фирменный стиль",
+          "Брендбук"
+        ]
+      },
+      {
+        "id": "003",
+        "title": "Мобильные приложения",
+        "isOpen": false,
+        "categories": [
+          "React Native",
+          "FlutterFlow"
+        ]
+      },
+      {
+        "id": "004",
+        "title": "Другое",
+        "isOpen": false,
+        "categories": [
+          "Чатботы",
+          "Web3 приложения",
+          "Парсеры и скрипты для автоматизации"
+        ]
+      }
+    ]
+  },
+  "skills": {
+    "title": "Скиллы",
+    "items": [
+      {
+        "id": "0001",
+        "title": "Frontend разработка",
+        "skills": [
+          "HTML5 + CSS3",
+          "LESS / SASS / SCSS",
+          "Bootstrap / Tailwind",
+          "JavaScript / TypeScript",
+          "jQuery",
+          "React / Vue / Next / Nuxt",
+          "Gulp / Webpack / Grunt"
+        ]
+      },
+      {
+        "id": "0002",
+        "title": "Backend разработка",
+        "skills": [
+          "Node.js",
+          "PHP",
+          "Python",
+          "Java",
+          "Docker",
+          "Laravel / Yii2",
+          "PostgreSQL / MySQL / MongoDB / Graphql",
+          "Swagger / Postman",
+          "CI / CD",
+          "Solidity / Smart Contracts / Ethereum / Blockchain"
+        ]
+      },
+      {
+        "id": "0003",
+        "title": "Мобильная разработка",
+        "skills": [
+          "Flutter Flow",
+          "React Native"
+        ]
+      },
+      {
+        "id": "0004",
+        "title": "CMS",
+        "skills": [
+          "Bitrix24",
+          "WordPress"
+        ]
+      },
+      {
+        "id": "0004",
+        "title": "Дизайн",
+        "skills": [
+          "Figma",
+          "Photoshop",
+          "Illustrator",
+          "Premiere Pro",
+          "InDesign"
+        ]
+      },
+      {
+        "id": "0005",
+        "title": "Командная работа",
+        "skills": [
+          "Linux / Windows / macOS",
+          "Git",
+          "Atlasian Jira / Basecamp / Toggle Track / Trello / Notion"
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Проекты",
+    "items": [
+      {
+        "id": "01",
+        "name": "KSD Company",
+        "task": "Создание дизайна для лендинга.",
+        "description": "",
+        "stack": [""],
+        "path": "ksd"
+      },
+      {
+        "id": "02",
+        "name": "Чудо игла",
+        "task": "Дизайн и вёрстка интернет магазина.",
+        "description": "",
+        "stack": [""],
+        "path": "chudo-igla"
+      },
+      {
+        "id": "03",
+        "name": "Invoice Profi",
+        "task": "Вёрстка и натяжка на WordPress.",
+        "description": "Наш коллектив успешно адаптировал существующий дизайн, усовершенствовав его в соответствии с нашими требованиями и ожиданиями. Кроме того, мы создали с нуля инновационный аудио-плеер, полностью основанный на технологии JavaScript. Дополнительно, мы разработали плагин для сайта, обеспечивающий функциональность тарификации, управления доступом и учета загруженных файлов. Важным шагом было также создание механизма отправки счетов и отчетов в формате PDF для нашей системы клиента.",
+        "stack": ["HTML", "CSS", "WordPress", "JavaScript", "Node.JS"],
+        "path": "invoice-profi"
+      }
+    ]
+  }
+}

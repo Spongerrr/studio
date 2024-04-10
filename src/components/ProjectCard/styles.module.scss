@@ -1,0 +1,42 @@
+@use '@styles' as *;
+
+.project {
+  padding-top: 10vh;
+}
+
+.content {
+  display: flex;
+  align-items: flex-start;
+  gap: 5vw;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.text {
+  max-width: 25vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+.text>div {
+  display: flex;
+  gap: 1vw;
+  padding-top: 2vh;
+  border-top: 1px solid var(--color-body);
+}
+
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+
+  p {
+    padding: 1vw;
+    border-radius: 28px;
+    color: var(--color-body-bg);
+    background: var(--color-body);
+  }
+}

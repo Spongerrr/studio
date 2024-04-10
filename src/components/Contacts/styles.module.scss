@@ -1,0 +1,101 @@
+@use '@styles' as *;
+
+.contacts {
+  margin-bottom: 1vh;
+
+  h2 {
+    margin-bottom: 10vh;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5vh;
+
+  form {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5vh;
+    row-gap: 3vh;
+
+    :nth-child(n+5) {
+      grid-column: span 2;
+    }
+
+    div:not(:last-child) {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        font-size: 12px;
+        color: var(--color-gray-700);
+        margin-bottom: 1vh;
+      }
+    }
+
+    button {
+      @include input;
+      background: var(--color-primary);
+      border: none;
+      cursor: pointer;
+      transition: all .3s;
+
+      &:hover {
+        transform: scale(1.03);
+      }
+    }
+  }
+}
+
+.info {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid var(--color-body);
+  border-radius: 28px;
+  padding: 1vh;
+
+  :first-child {
+    display: flex;
+    flex-direction: column;
+
+    :nth-child(2) {
+      margin-top: 2vh;
+    }
+    
+    :nth-child(3) {
+      margin-top: 1vh;
+    }
+  }
+}
+
+@media (max-width: 920px) {
+  .contacts {
+    h2 {
+      margin-bottom: 5vh;
+    }
+  }
+
+  .content {
+    form {
+      width: 95vw;
+    }
+  }
+}
+
+@media (max-width: 560px) {
+  .content {
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .info {
+    display: none;
+  }
+}

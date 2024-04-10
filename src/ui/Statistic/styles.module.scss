@@ -1,0 +1,50 @@
+@use '@styles' as *;
+
+.statistic {
+  display: flex;
+  gap: 5vw;
+
+  div {
+    width: 18vw;
+    padding-top: 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+    border-top: 1px solid var(--color-body);
+  }
+
+  span {
+    font-family: var(--font-unbounded);
+    font-size: 48px;
+    line-height: 48px;
+    font-weight: 900;
+  }
+}
+@keyframes counter {
+  from {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 920px) {
+  .statistic {
+    flex-direction: column;
+    gap: 0;
+
+    div {
+      width: 100vw;
+      padding-block: 5vh;
+    }
+
+    span {
+      font-size: 24px;
+      line-height: 24px;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@use '@styles' as *;
+
+.body,
+.primary {
+  padding: 1.5vh 1.5vw;
+  text-align: center;
+  font-weight: 500;
+}
+
+.body {
+  background: var(--color-body);
+  color: var(--color-body-bg);
+}
+
+.primary {
+  background: var(--color-primary);
+  color: var(--color-body);
+}

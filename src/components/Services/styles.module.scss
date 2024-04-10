@@ -1,0 +1,135 @@
+@use '@styles' as *;
+
+.services {
+  margin-bottom: 15vh;
+  
+  h2 {
+    margin-bottom: 10vh;
+  }
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5vw;
+}
+
+
+
+// ! ===== DESKTOP SCREEN ===== !
+.desktop {
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+
+  .items {
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 2vh;
+  }
+
+  .title {
+    display: flex;
+    align-items: center;
+    gap: 0.5vw;
+  }
+
+  .blocks {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1vw;
+  }
+
+  button {  // Block
+    border: none;
+    background: var(--color-body);
+    color: var(--color-body-bg);
+    border-radius: 8px;
+    padding: 1vw 2vw;
+  }
+}
+// ! ===== DESKTOP SCREEN ===== !
+
+
+
+// ! ===== MOBILE SCREEN ===== !
+.mobile {
+  @extend .desktop;
+  display: none;
+
+  .title {
+    gap: 1vw;
+  }
+
+  .title,
+  .blocks {
+    align-self: center;
+  }
+
+  .blocks {
+    justify-content: center;
+  }
+
+  button {
+    padding: 2vw 3vw;
+  }
+}
+// ! ===== MOBILE SCREEN ===== !
+
+
+
+.info {
+  @include info;
+}
+
+@media (min-width: 1920px) {
+  .desktop {
+    .items {
+      width: 45vw;
+    }
+  }
+}
+
+@media (max-width: 920px) {
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: flex;
+    align-items: center;
+  }
+
+  .services {
+    margin-bottom: 10vh;
+
+    h2 {
+      margin-bottom: 5vh;
+    }
+  }
+  
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 560px) {
+
+  .services {
+    margin-bottom: 5vh;
+
+    h2 {
+      margin-bottom: 5vh;
+    }
+  }
+  
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+}

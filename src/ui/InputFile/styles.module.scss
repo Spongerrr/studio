@@ -1,0 +1,30 @@
+@use '@styles' as *;
+
+.file {
+  input+label {
+    @include input;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all .3s;
+  }
+
+  input:focus+label,
+  input+label:hover {
+    color: var(--color-body);
+    background: var(--color-primary);
+  }
+
+  input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+
+  label:first-child {
+    font-size: 12px;
+  }
+}

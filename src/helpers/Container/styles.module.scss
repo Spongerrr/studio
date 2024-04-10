@@ -1,0 +1,27 @@
+@use '@styles' as *;
+
+.default,
+.stretch,
+.full {
+  margin: 0 auto;
+}
+
+.default {
+  max-width: 65vw;
+}
+
+.stretch {
+  max-width: 80vw;
+}
+
+.full {
+  max-width: 90vw;
+}
+
+@media (max-width: 920px) {
+  .default,
+  .stretch,
+  .full {
+    max-width: 95vw;
+  }
+}

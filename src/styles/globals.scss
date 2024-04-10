@@ -1,0 +1,142 @@
+@use '@styles' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-montserrat);
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--color-body);
+  font-weight: 400;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  -webkit-margin-after: 0;
+  -webkit-margin-before: 0;
+}
+
+p,
+a,
+strong,
+button,
+input,
+textarea {
+  font-size: 16px;
+  line-height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-unbounded);
+}
+
+h1 {
+  font-size: 75px;
+  line-height: 75px;
+  font-weight: 900;
+  text-align: center;
+}
+
+h2 {
+  font-size: 50px;
+  line-height: 50px;
+  font-weight: 800;
+  text-align: center;
+}
+
+h3 {
+  font-size: 30px;
+  line-height: 50px;
+  font-weight: 800;
+}
+
+@media (min-width: 2560px) {
+
+  h1 {
+    font-size: 100px;
+    line-height: 100px;
+  }
+
+  h2 {
+    font-size: 75px;
+    line-height: 75px;
+  }
+
+  h3 {
+    font-size: 50px;
+    line-height: 75px;
+  }
+
+  p,
+  a,
+  strong,
+  button,
+  input,
+  textarea {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 920px) {
+  h1 {
+    font-size: 50px;
+    line-height: 50px;
+  }
+  
+  h2 {
+    font-size: 25px;
+    line-height: 25px;
+  }
+
+  h3 {
+    font-size: 15px;
+    line-height: 15px;
+  }
+
+  p,
+  a,
+  strong,
+  button,
+  input,
+  textarea {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 560px) {
+  h1 {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  h3 {
+    font-size: 12px;
+    line-height: 12px;
+  }
+
+  p,
+  a,
+  strong,
+  button,
+  input,
+  textarea {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 420px) {}
