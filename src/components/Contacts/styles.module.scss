@@ -38,6 +38,7 @@
 
     button {
       @include input;
+      color: var(--color-body);
       background: var(--color-primary);
       border: none;
       cursor: pointer;
