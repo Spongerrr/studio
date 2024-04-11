@@ -30,6 +30,12 @@
   .button {
     gap: 0.3vw;
 
+    div {
+      a {
+        padding: 2vw 3vw;
+      }
+    }
+
     svg {
       width: 1.5vw;
       height: auto;
@@ -39,7 +45,7 @@
 
 @media (max-width: 560px) {
   .button {
-    div {
+    a {
       padding: 3vw 4vw;
     }
   }

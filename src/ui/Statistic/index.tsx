@@ -64,15 +64,15 @@ export const Statistic: React.FC<StatisticProps> = ({ team, projects, experience
       <motion.div
         initial={{ x: '-100vw' }}
         animate={{ x: 0 }}
-        transition={{ delay: 1.5, duration: 1.5, type: "spring", stiffness: 120 }}
+        transition={{ delay: 1.5, duration: 1.5, type: "spring", stiffness: 40 }}
       >
         <span>{animatedValues.team}</span>
         <p>человек в команде</p>
       </motion.div>
       <motion.div
-        initial={{ y: '-100vh' }}
+        initial={{ y: '100vh' }}
         animate={{ y: 0 }}
-        transition={{ delay: 2.5, duration: 1.5, type: "spring", stiffness: 60 }}
+        transition={{ delay: 2, duration: 1.5, type: "spring", stiffness: 40 }}
       >
         <span>{animatedValues.projects}</span>
         <p>реализованных проектов</p>
@@ -80,7 +80,7 @@ export const Statistic: React.FC<StatisticProps> = ({ team, projects, experience
       <motion.div
         initial={{ x: '100vw' }}
         animate={{ x: 0 }}
-        transition={{ delay: 2, duration: 1.5, type: "spring", stiffness: 60 }}
+        transition={{ delay: 2.5, duration: 1.5, type: "spring", stiffness: 40 }}
       >
         <span>{animatedValues.experience}</span>
         <p>года эффективной работы</p>

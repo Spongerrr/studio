@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Container, Svg } from '@/helpers'
 import { Button, Logo } from '@/ui'
-import { CSSTransition } from 'react-transition-group'
+import { motion, AnimatePresence } from 'framer-motion'
 import locales from '@public/locales/ru.json'
 
 import s from './styles.module.scss'
@@ -40,26 +40,24 @@ export const Services = () => {
           <div className={s.mobile}>
             {locales.services.items.map((item, index) => (
               <div key={item.id} className={s.items}>
-                <div className={s.title} onClick={() => toggleCategory(index)}>
+                <div className={!item.isOpen ? s.title : s.titleActive} onClick={() => toggleCategory(index)}>
                   <Svg type='menu' />
                   <strong>{item.title}</strong>
                 </div>
-                <CSSTransition
-                  in={item.isOpen}
-                  timeout={500}
-                  mountOnEnter
-                  unmountOnExit
-                  classNames={{
-                    enterActive: s.enter,
-                    exitActive: s.exit
-                  }}
-                >
-                  <div className={s.blocks}>
-                    {item.categories.map((category) => (
-                      <button key={category}>{category}</button>
-                    ))}
-                  </div>
-                </CSSTransition>
+                <AnimatePresence>
+                  {item.isOpen &&
+                    <motion.div
+                      className={s.blocks}
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                    >
+                      {item.categories.map((category) => (
+                        <button key={category}>{category}</button>
+                      ))}
+                    </motion.div>
+                  }
+                </AnimatePresence>
               </div>
             ))}
           </div>

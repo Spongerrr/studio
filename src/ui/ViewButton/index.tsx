@@ -10,21 +10,21 @@ export const ViewButton = () => {
       <motion.div
         initial={{ x: '-100vw' }}
         animate={{ x: 0 }}
-        transition={{ delay: 1.5, duration: 1.5, type: "spring", stiffness: 120 }}
+        transition={{ delay: 1.5, duration: 1.5, type: "spring", stiffness: 40 }}
       >
         <Link href='/projects'>Смотреть</Link>
       </motion.div>
       <motion.div
         initial={{ y: '-100vh' }}
         animate={{ y: 0 }}
-        transition={{ delay: 2.5, duration: 1.5, type: "spring", stiffness: 60 }}
+        transition={{ delay: 2.5, duration: 1.5, type: "spring", stiffness: 40 }}
       >
         <Link href='/projects'>Лучшие кейсы</Link>
       </motion.div>
       <motion.div
         initial={{ x: '100vw' }}
         animate={{ x: 0 }}
-        transition={{ delay: 2, duration: 1.5, type: "spring", stiffness: 60 }}
+        transition={{ delay: 1.5, duration: 1.5, type: "spring", stiffness: 40 }}
       >
         <Link href='/projects'><Svg type='arrow-corner-up' /></Link>
       </motion.div>

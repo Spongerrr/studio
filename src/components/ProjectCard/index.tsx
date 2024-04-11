@@ -88,43 +88,48 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               </motion.div>
             </div>
           </motion.div>
-          <div className={s.mobile}>
-            <motion.h2 variants={animation}>{item?.name}</motion.h2>
+          <motion.div
+            className={s.mobile}
+            initial={{ y: '-100vh' }}
+            animate={{ y: 0 }}
+            transition={{ delay: 0, duration: 0, type: "spring", stiffness: 20 }}
+          >
+            <h2>{item?.name}</h2>
             <img
               src={`/projects/${item?.path}/preview.png`}
               alt={'alt'}
             />
             <div className={s.text}>
-              <motion.div variants={animation}>
+              <div >
                 <span>24</span>
                 <p>часа на проект</p>
-              </motion.div>
-              <motion.div variants={animation}>
+              </div>
+              <div>
                 <span>3</span>
                 <p>разработчика</p>
-              </motion.div>
-              <motion.div variants={animation}>
+              </div>
+              <div>
                 <span>2</span>
                 <p>дизайнера</p>
-              </motion.div>
+              </div>
             </div>
             <img
               src={`/projects/${item?.path}/1.png`}
               alt={'alt'}
             />
-            <motion.div variants={animation}>
+            <div>
               <p>{item?.task}</p>
-            </motion.div>
+            </div>
             <img
               src={`/projects/${item?.path}/2.png`}
               alt={'alt'}
             />
-            <motion.div variants={animation} className={s.stack}>
+            <div className={s.stack}>
               {item.stack.map((i) => (
                 <p key={i}>{i}</p>
               ))}
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
         </Container>
       ) : (
         <div className={s.error}>
