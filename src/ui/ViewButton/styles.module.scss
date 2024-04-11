@@ -5,18 +5,22 @@
   align-items: center;
   gap: 0.1vw;
 
-  a {
-    color: var(--color-body-bg);
-    background: var(--color-body);
-    padding: 1vw 2vw;
+  div {
+    a {
+      background: var(--color-body);
+      color: var(--color-body-bg);
+      padding: 1vw 2vw;
+    }
   }
 
-  :nth-child(1) {  // Left side
+  :nth-child(1)>a {
+    // Left side
     border-top-left-radius: 28px;
     border-bottom-left-radius: 28px;
   }
-  
-  :nth-child(3) {  // Right side
+
+  :nth-child(3)>a {
+    // Right side
     border-top-right-radius: 28px;
     border-bottom-right-radius: 28px;
   }
@@ -25,10 +29,6 @@
 @media (max-width: 920px) {
   .button {
     gap: 0.3vw;
-
-    a {
-      padding: 2vw 3vw;
-    }
 
     svg {
       width: 1.5vw;
@@ -39,7 +39,7 @@
 
 @media (max-width: 560px) {
   .button {
-    a {
+    div {
       padding: 3vw 4vw;
     }
   }

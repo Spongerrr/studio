@@ -10,8 +10,6 @@
 
 .content {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   gap: 5vw;
 }
 
@@ -61,13 +59,13 @@
   @extend .desktop;
   display: none;
 
-  .title {
-    gap: 1vw;
+  .items {
+    width: 100%;
   }
 
-  .title,
-  .blocks {
-    align-self: center;
+  .title {
+    gap: 1vw;
+    justify-content: center;
   }
 
   .blocks {
@@ -101,7 +99,6 @@
 
   .mobile {
     display: flex;
-    align-items: center;
   }
 
   .services {

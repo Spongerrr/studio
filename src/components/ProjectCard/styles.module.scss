@@ -2,21 +2,63 @@
 
 .project {
   padding-top: 10vh;
+  margin-bottom: 10vh;
 }
 
-.content {
+.images {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+
+.desktop {
   display: flex;
   align-items: flex-start;
   gap: 5vw;
 
+  h2 {
+    text-align: left;
+  }
+
   img {
     width: 100%;
     height: auto;
+    border: 1px solid var(--color-gray-300);
+    border-radius: 8px;
+  }
+}
+
+.mobile {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 2vh;
+
+  img {
+    width: 100%;
+    border-radius: 28px;
+  }
+
+  .text {
+    flex-direction: row;
+    justify-content: space-around;
+
+    div {
+      border: none;
+    }
+  }
+
+  .stack {
+    gap: 1vh;
+
+    p {
+      padding: 2vw;
+    }
   }
 }
 
 .text {
-  max-width: 25vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 2vh;
@@ -24,9 +66,17 @@
 
 .text>div {
   display: flex;
+  align-items: center;
   gap: 1vw;
   padding-top: 2vh;
   border-top: 1px solid var(--color-body);
+}
+
+.text {
+  span {
+    font-weight: 800;
+  }
+  
 }
 
 .stack {
@@ -38,5 +88,49 @@
     border-radius: 28px;
     color: var(--color-body-bg);
     background: var(--color-body);
+  }
+}
+
+.error {
+  padding-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10vh;
+
+  img {
+    width: 100%;
+    height: auto;
+    padding: 5vw 15vw;
+    border-radius: 28px;
+    border: 1px solid var(--color-body);
+  }
+}
+
+@media (max-width: 920px) {
+
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: flex;
+  }
+}
+
+@media (max-width: 560px) {
+  .mobile {
+    .text {
+      flex-direction: column;
+      align-items: center;
+
+      div {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-top: 1px solid var(--color-body);
+      }
+    }
   }
 }

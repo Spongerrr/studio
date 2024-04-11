@@ -58,13 +58,24 @@
         "id": "0001",
         "title": "Frontend разработка",
         "skills": [
-          "HTML5 + CSS3",
-          "LESS / SASS / SCSS",
-          "Bootstrap / Tailwind",
-          "JavaScript / TypeScript",
-          "jQuery",
-          "React / Vue / Next / Nuxt",
-          "Gulp / Webpack / Grunt"
+          "HTML",
+          "CSS",
+          "SCSS",
+          "LESS",
+          "Bootstrap",
+          "Tailwind CSS",
+          "JavaScript",
+          "TypeScript",
+          "JQuery",
+          "React",
+          "Vue",
+          "Angular",
+          "Next.JS",
+          "Nuxt.JS",
+          "Webpack",
+          "Vite",
+          "Grunt",
+          "Gulp"
         ]
       },
       {
@@ -76,11 +87,13 @@
           "Python",
           "Java",
           "Docker",
-          "Laravel / Yii2",
-          "PostgreSQL / MySQL / MongoDB / Graphql",
-          "Swagger / Postman",
+          "Laravel",
+          "Yii2",
+          "Databases",
+          "Swagger",
+          "Postman",
           "CI / CD",
-          "Solidity / Smart Contracts / Ethereum / Blockchain"
+          "Solidity"
         ]
       },
       {
@@ -96,11 +109,12 @@
         "title": "CMS",
         "skills": [
           "Bitrix24",
+          "1C-Bitrix",
           "WordPress"
         ]
       },
       {
-        "id": "0004",
+        "id": "0005",
         "title": "Дизайн",
         "skills": [
           "Figma",
@@ -111,42 +125,19 @@
         ]
       },
       {
-        "id": "0005",
+        "id": "0006",
         "title": "Командная работа",
         "skills": [
-          "Linux / Windows / macOS",
+          "Linux",
+          "Windows",
+          "macOS",
           "Git",
-          "Atlasian Jira / Basecamp / Toggle Track / Trello / Notion"
+          "Atlasian Jira",
+          "Basecamp",
+          "Toggle Track",
+          "Trello",
+          "Notion"
         ]
-      }
-    ]
-  },
-  "projects": {
-    "title": "Проекты",
-    "items": [
-      {
-        "id": "01",
-        "name": "KSD Company",
-        "task": "Создание дизайна для лендинга.",
-        "description": "",
-        "stack": [""],
-        "path": "ksd"
-      },
-      {
-        "id": "02",
-        "name": "Чудо игла",
-        "task": "Дизайн и вёрстка интернет магазина.",
-        "description": "",
-        "stack": [""],
-        "path": "chudo-igla"
-      },
-      {
-        "id": "03",
-        "name": "Invoice Profi",
-        "task": "Вёрстка и натяжка на WordPress.",
-        "description": "Наш коллектив успешно адаптировал существующий дизайн, усовершенствовав его в соответствии с нашими требованиями и ожиданиями. Кроме того, мы создали с нуля инновационный аудио-плеер, полностью основанный на технологии JavaScript. Дополнительно, мы разработали плагин для сайта, обеспечивающий функциональность тарификации, управления доступом и учета загруженных файлов. Важным шагом было также создание механизма отправки счетов и отчетов в формате PDF для нашей системы клиента.",
-        "stack": ["HTML", "CSS", "WordPress", "JavaScript", "Node.JS"],
-        "path": "invoice-profi"
       }
     ]
   }

@@ -69,7 +69,7 @@ export const Services = () => {
             <Logo type='default' />
             <p>Ознакомьтесь с нашим опытом</p>
             <Button
-              href='/portfolio'
+              href='/projects'
               color='primary'
               br='soft'
             >

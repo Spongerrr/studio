@@ -9,3 +9,13 @@
     transform: translateY(0);
   }
 }
+
+@keyframes open {
+  from {
+    transform: rotate(-180deg);
+  }
+  
+  to {
+    transform: rotate(0);
+  }
+}

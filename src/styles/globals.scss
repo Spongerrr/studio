@@ -52,9 +52,9 @@ h1 {
   text-align: center;
 }
 
-h2 {
-  font-size: 50px;
-  line-height: 50px;
+h2, span {
+  font-size: 48px;
+  line-height: 48px;
   font-weight: 800;
   text-align: center;
 }
@@ -98,9 +98,9 @@ h3 {
     line-height: 50px;
   }
   
-  h2 {
-    font-size: 25px;
-    line-height: 25px;
+  h2, span {
+    font-size: 40px;
+    line-height: 40px;
   }
 
   h3 {
@@ -124,6 +124,11 @@ h3 {
     line-height: 40px;
   }
 
+  span {
+    font-size: 30px;
+    line-height: 30px;
+  }
+
   h3 {
     font-size: 12px;
     line-height: 12px;
@@ -139,4 +144,9 @@ h3 {
   }
 }
 
-@media (max-width: 420px) {}
+@media (max-width: 420px) {
+  span {
+    font-size: 24px;
+    line-height: 24px;
+  }
+}

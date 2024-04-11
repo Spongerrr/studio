@@ -1,10 +1,9 @@
 'use client'
 
-import locales from '@public/locales/ru.json'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Project } from '@/ui'
-import { Container } from '@/helpers'
 import { EffectCoverflow, Autoplay, Pagination } from 'swiper/modules'
+import data from '@/helpers/data.json'
 
 import s from './styles.module.scss'
 
@@ -13,13 +12,18 @@ import 'swiper/scss/autoplay'
 import 'swiper/scss/pagination'
 import 'swiper/scss'
 
+
 export const Slider = () => {
+
   return (
     <div className={s.wrapper}>
-      <h2>{locales.projects.title}</h2>
+      <h2>Лучшие проекты</h2>
       <Swiper
         effect={'coverflow'}
         grabCursor={true}
+        autoplay={{
+          delay: 2000
+        }}
         pagination={{
           enabled: true,
           horizontalClass: s.pagination,
@@ -36,7 +40,7 @@ export const Slider = () => {
           slideShadows: false
         }}
       >
-        {locales.projects.items.map((project) => (
+        {data.map((project) => (
           <SwiperSlide key={project.id} className={s.slider}>
             <div className={s.container}>
               <Project project={project} type='slider' />

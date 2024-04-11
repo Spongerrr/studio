@@ -61,18 +61,30 @@ export const Statistic: React.FC<StatisticProps> = ({ team, projects, experience
 
   return (
     <div className={s.statistic}>
-      <div>
-        <motion.span style={{...initialStyle}} animate={animateStyle}>{animatedValues.team}</motion.span>
+      <motion.div
+        initial={{ x: '-100vw' }}
+        animate={{ x: 0 }}
+        transition={{ delay: 1.5, duration: 1.5, type: "spring", stiffness: 120 }}
+      >
+        <span>{animatedValues.team}</span>
         <p>человек в команде</p>
-      </div>
-      <div>
-      <motion.span style={{...initialStyle}} animate={animateStyle}>{animatedValues.projects}</motion.span>
+      </motion.div>
+      <motion.div
+        initial={{ y: '-100vh' }}
+        animate={{ y: 0 }}
+        transition={{ delay: 2.5, duration: 1.5, type: "spring", stiffness: 60 }}
+      >
+        <span>{animatedValues.projects}</span>
         <p>реализованных проектов</p>
-      </div>
-      <div>
-      <motion.span style={{...initialStyle}} animate={animateStyle}>{animatedValues.experience}</motion.span>
+      </motion.div>
+      <motion.div
+        initial={{ x: '100vw' }}
+        animate={{ x: 0 }}
+        transition={{ delay: 2, duration: 1.5, type: "spring", stiffness: 60 }}
+      >
+        <span>{animatedValues.experience}</span>
         <p>года эффективной работы</p>
-      </div>
+      </motion.div>
     </div>
   )
 }

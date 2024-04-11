@@ -1,7 +1,6 @@
-import { useState } from 'react'
+import { Svg } from '@/helpers'
 
 import s from './styles.module.scss'
-import { Svg } from '@/helpers'
 
 interface InputFileProps {
   fileName: string

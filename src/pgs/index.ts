@@ -1,4 +1,4 @@
 export * from './Home'
 export * from './Contacts'
-export * from './Portfolio'
+export * from './Projects'
 export * from './ProjectCard'

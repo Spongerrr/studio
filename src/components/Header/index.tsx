@@ -7,9 +7,9 @@ import { Logo } from '@/ui'
 import { Container, Svg } from '@/helpers'
 import { usePath } from '@/hooks'
 import { motion } from 'framer-motion'
+import { usePathname } from 'next/navigation'
 
 import s from './styles.module.scss'
-import { usePathname } from 'next/navigation'
 
 export const Header = () => {
   const [showMenu, setShowMenu] = useState(false)
@@ -22,7 +22,7 @@ export const Header = () => {
       <Container size='full'>
         <div className={s.content}>
           <div className={s.left}>
-            <Link href='/'>
+            <Link href='/' onClick={() => setShowMenu(false)}>
               <Logo type={showMenu ? 'brand' : 'default'} />
             </Link>
             <strong className={s.dividor}>/</strong>
@@ -43,7 +43,7 @@ export const Header = () => {
           <nav className={s.desktop}>
             <ul>
               <li>
-                <Link href={'/projects'}>Портфолио</Link>
+                <Link href={'/projects'}>Проекты</Link>
               </li>
               <li>
                 <Link href={'/contacts'}>Контакты</Link>
@@ -68,8 +68,16 @@ export const Header = () => {
               }}
             >
               <ul>
-                <li><Link href='/projects'>Портфолио</Link></li>
-                <li><Link href='/contacts'>Контакты</Link></li>
+                <li>
+                  <Link href='/projects' onClick={() => setShowMenu(false)}>
+                    Проекты
+                  </Link>
+                </li>
+                <li>
+                  <Link href='/contacts' onClick={() => setShowMenu(false)}>
+                    Контакты
+                  </Link>
+                </li>
               </ul>
             </CSSTransition>
           </nav>

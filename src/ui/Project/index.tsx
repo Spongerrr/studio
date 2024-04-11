@@ -1,8 +1,10 @@
 'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import { IProject } from '@/models'
 import { motion } from 'framer-motion'
+
 import s from './styles.module.scss'
 
 const item = {
