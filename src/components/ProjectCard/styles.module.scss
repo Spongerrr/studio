@@ -1,5 +1,9 @@
 @use '@styles' as *;
 
+.isVisible {
+  overflow: hidden;
+}
+
 .project {
   padding-top: 10vh;
   margin-bottom: 10vh;

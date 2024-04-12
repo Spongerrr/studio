@@ -59,7 +59,12 @@ export const Projects = () => {
 
   return (
     <Container size='stretch'>
-      <motion.div className={s.projects} variants={container} initial='hidden' animate='visible'>
+      <motion.div
+        className={!isVisible ? s.projects : s.projectsActive}
+        variants={container}
+        initial='hidden'
+        animate='visible'
+      >
         <h2>Проекты</h2>
         <button onClick={() => setIsVisible(!isVisible)}>Фильтр</button>
         <div className={s.content}>

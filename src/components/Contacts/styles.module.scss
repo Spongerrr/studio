@@ -34,8 +34,15 @@
         color: var(--color-gray-700);
         margin-bottom: 1vh;
       }
+
     }
 
+    .error {
+      text-align: center;
+      color: red;
+      font-weight: 500;
+    }
+    
     button {
       @include input;
       color: var(--color-body);

@@ -43,7 +43,10 @@ export const Dropdown: React.FC<DropdownProps> = ({ select, setSelect }) => {
 
   return (
     <div>
-      <label>Выберите категорию</label>
+      <label className={s.label}>
+        Выберите категорию
+        <p>*</p>
+      </label>
       <div className={s.dropdown}>
         <input
           type='text'

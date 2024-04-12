@@ -1,8 +1,8 @@
 import { IForm } from "@/models";
 
 export async function SendMessage(data: IForm): Promise<void> {
-  const token = '7123526908:AAGhMzIb9XiqEJgVd22VtsRQu1HPa4FRhIc'
-  const chatId = '5622796954'
+  const token = "7030592595:AAF37cLanxictKTIbcGlfTJom2Jr3ly2048"
+  const chatId = "-1002096835060"
 
   const message = `
       Заявка с формы контактов:

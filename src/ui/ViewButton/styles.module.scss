@@ -32,7 +32,7 @@
 
     div {
       a {
-        padding: 3vw 4vw;
+        padding: 2vw 3vw;
       }
     }
 
@@ -47,6 +47,10 @@
   .button {
     a {
       padding: 3vw 4vw;
+    }
+
+    svg {
+      width: 2vw;
     }
   }
 }
