@@ -37,7 +37,7 @@ export const Footer = () => {
                   <Link href='mailto:hello@penguinstudio.com'>hello@penguinstudio.com</Link>
                 </div>
                 <div>
-                  <Link href='tel:+'>+41798272164</Link>
+                  <Link href='tel:+41798272164'>+4-(179)-827-21-64</Link>
                 </div>
               </div>
             </Container>
