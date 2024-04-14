@@ -8,6 +8,17 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 import s from './styles.module.scss'
 
+const titleAnimation = {
+  hidden: {
+    x: -500,
+    opacity: 0
+  },
+  visible: {
+    x: 0,
+    opacity: 1
+  }
+}
+
 export const Contacts = () => {
   const [errors, setErrors] = useState<string[]>([])
   const [sended, setSended] = useState(false)
@@ -50,8 +61,13 @@ export const Contacts = () => {
 
   return (
     <Container size='default'>
-      <div className={s.contacts}>
-        <h2>{!sended ? 'Свяжитесь с нами' : 'Остались вопросы?'}</h2>
+      <motion.div 
+      className={s.contacts}
+      initial='hidden'
+      whileInView='visible'
+      viewport={{amount: 0.2}}
+      >
+        <motion.h2 variants={titleAnimation}>{!sended ? 'Свяжитесь с нами' : 'Остались вопросы?'}</motion.h2>
         <div className={s.content}>
           <AnimatePresence>
             {!sended &&
@@ -122,7 +138,7 @@ export const Contacts = () => {
             <Logo type='default' />
           </div>
         </div>
-      </div>
+      </motion.div>
     </Container>
   )
 }

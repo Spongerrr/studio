@@ -1,9 +1,10 @@
 'use client'
 
+import projects from '@/data/projects.json'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Project } from '@/ui'
 import { EffectCoverflow, Autoplay, Pagination } from 'swiper/modules'
-import data from '@/helpers/data.json'
+import { motion } from 'framer-motion'
 
 import s from './styles.module.scss'
 
@@ -12,12 +13,28 @@ import 'swiper/scss/autoplay'
 import 'swiper/scss/pagination'
 import 'swiper/scss'
 
+const titleAnimation = {
+  hidden: {
+    x: 500,
+    opacity: 0
+  },
+  visible: {
+    x: 0,
+    opacity: 1
+  }
+}
 
 export const Slider = () => {
 
   return (
-    <div className={s.wrapper}>
-      <h2>Лучшие проекты</h2>
+    <motion.div
+      id='best'
+      className={s.wrapper}
+      initial='hidden'
+      whileInView='visible'
+      viewport={{ amount: 0.2 }}
+    >
+      <motion.h2 variants={titleAnimation}>Лучшие проекты</motion.h2>
       <Swiper
         effect={'coverflow'}
         grabCursor={true}
@@ -40,14 +57,16 @@ export const Slider = () => {
           slideShadows: false
         }}
       >
-        {data.map((project) => (
-          <SwiperSlide key={project.id} className={s.slider}>
-            <div className={s.container}>
-              <Project project={project} type='slider' />
-            </div>
-          </SwiperSlide>
+        {projects.map((project) => (
+          project.best && (
+            <SwiperSlide key={project.id} className={s.slider}>
+              <div className={s.container}>
+                <Project project={project} type='slider' />
+              </div>
+            </SwiperSlide>
+          )
         ))}
       </Swiper>
-    </div>
+    </motion.div>
   )
 }

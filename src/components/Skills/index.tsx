@@ -1,14 +1,44 @@
+'use client'
+
 import { Container, Svg } from '@/helpers'
+import { motion } from 'framer-motion'
 import locales from '@public/locales/ru.json'
 
 import s from './styles.module.scss'
 
+const blocksAnimation = {
+  hidden: {
+    y: 100,
+    opacity: 0
+  },
+  visible: {
+    y: 0,
+    opacity: 1
+  }
+}
+
+const titleAnimation = {
+  hidden: {
+    x: 500,
+    opacity: 0
+  },
+  visible: {
+    x: 0,
+    opacity: 1
+  }
+}
+
 export const Skills = () => {
   return (
-    <div className={s.skills}>
+    <motion.div
+      className={s.skills}
+      initial='hidden'
+      whileInView='visible'
+      viewport={{ amount: 0.2 }}
+    >
       <Container size='default'>
-        <h2>{locales.skills.title}</h2>
-        <div  className={s.content}>
+        <motion.h2 variants={titleAnimation}>{locales.skills.title}</motion.h2>
+        <div className={s.wrapper}>
           {locales.skills.items.map((item) => (
             <div key={item.id}>
               <div className={s.title}>
@@ -26,6 +56,6 @@ export const Skills = () => {
           ))}
         </div>
       </Container>
-    </div>
+    </motion.div>
   )
 }

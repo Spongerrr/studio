@@ -1,8 +1,9 @@
 import { ProjectCardPage } from '@/pgs'
-interface Props {
-  params: {
-    project: string
-  }
+import { Metadata, ResolvingMetadata } from 'next'
+
+type Props = {
+  params: { project: string }
+  searchParams: { [key: string]: string | string[] | undefined}
 }
 
 export default function ProjectCard({ params }: Props) {

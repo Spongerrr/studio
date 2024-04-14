@@ -1,0 +1,240 @@
+[
+  {
+    "id": "01",
+    "name": "KSD Company",
+    "task": "Создание дизайна для лендинга.",
+    "description": "",
+    "service": [
+      "Web дизайн"
+    ],
+    "stack": [
+      "Figma",
+      "Photoshop"
+    ],
+    "path": "ksd",
+    "images": [
+      "preview.png",
+      "1.png",
+      "2.png"
+    ],
+    "best": true
+  },
+  {
+    "id": "02",
+    "name": "Чудо игла",
+    "task": "Дизайн и вёрстка интернет магазина.",
+    "description": "",
+    "service": [
+      "Web дизайн"
+    ],
+    "stack": [
+      "HTML",
+      "CSS",
+      "Bootstrap",
+      "JavaScript",
+      "JQuery",
+      "SCSS",
+      "Illustrator"
+    ],
+    "path": "chudo-igla",
+    "images": [
+      "preview.png",
+      "1.png",
+      "2.png"
+    ],
+    "best": false
+  },
+  {
+    "id": "03",
+    "name": "Invoice Profi",
+    "task": "Вёрстка и натяжка на WordPress.",
+    "description": "Наш коллектив успешно адаптировал существующий дизайн, усовершенствовав его в соответствии с нашими требованиями и ожиданиями. Кроме того, мы создали с нуля инновационный аудио-плеер, полностью основанный на технологии JavaScript. Дополнительно, мы разработали плагин для сайта, обеспечивающий функциональность тарификации, управления доступом и учета загруженных файлов. Важным шагом было также создание механизма отправки счетов и отчетов в формате PDF для нашей системы клиента.",
+    "service": [
+      "Многостраничные сайты"
+    ],
+    "stack": [
+      "HTML",
+      "CSS",
+      "WordPress",
+      "JavaScript",
+      "Node.JS"
+    ],
+    "path": "invoice-profi",
+    "images": [
+      "preview.png",
+      "1.png",
+      "2.png"
+    ],
+    "best": true
+  },
+  {
+    "id": "04",
+    "name": "Sens Collective",
+    "task": "Разработка новой страницы на CMS 1C-Bitrix",
+    "description": "Наш коллектив успешно адаптировал существующий дизайн, усовершенствовав его в соответствии с нашими требованиями и ожиданиями. Кроме того, мы создали с нуля инновационный аудио-плеер, полностью основанный на технологии JavaScript. Дополнительно, мы разработали плагин для сайта, обеспечивающий функциональность тарификации, управления доступом и учета загруженных файлов. Важным шагом было также создание механизма отправки счетов и отчетов в формате PDF для нашей системы клиента.",
+    "service": [
+      "Многостраничные сайты"
+    ],
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "PHP",
+      "1C-Bitrix",
+      "Figma"
+    ],
+    "path": "sens-collective",
+    "images": [
+      "preview.png",
+      "1.png",
+      "2.png"
+    ],
+    "best": true
+  },
+  {
+    "id": "05",
+    "name": "Ivolga",
+    "task": "Разработка интернет магазина с нуля.",
+    "description": "",
+    "service": [
+      "Онлайн магазины"
+    ],
+    "stack": [
+      "HTML",
+      "SCSS",
+      "JavaScript",
+      "PHP",
+      "1C-Bitrix",
+      "Figma"
+    ],
+    "path": "ivolga",
+    "images": [
+      "preview.png",
+      "1.png",
+      "2.png"
+    ],
+    "best": true
+  },
+  {
+    "id": "06",
+    "name": "Два бисквита",
+    "task": "Дизайн и разработка интернет магазина.",
+    "description": "",
+    "service": [
+      "Онлайн магазины",
+      "Web дизайн"
+    ],
+    "stack": [
+      "HTML",
+      "SCSS",
+      "Gulp",
+      "JavaScript",
+      "JQuery",
+      "Illustrator",
+      "Photoshop"
+    ],
+    "path": "dva-biskvita",
+    "images": [
+      "preview.png",
+      "1.png",
+      "2.png"
+    ],
+    "best": false
+  },
+  {
+    "id": "07",
+    "name": "Goods Mood",
+    "task": "Логотип для магазина.",
+    "description": "",
+    "service": [
+      "Логотипы"
+    ],
+    "stack": [
+      "Illustrator"
+    ],
+    "path": "goods-mood",
+    "images": [
+      "preview.png",
+      "1.png",
+      "2.png"
+    ],
+    "best": false
+  },
+  {
+    "id": "08",
+    "name": "Студия Сергея Крупнова",
+    "task": "Логотип для ювелирной студии.",
+    "description": "",
+    "service": [
+      "Логотипы"
+    ],
+    "stack": [
+      "Illustrator"
+    ],
+    "path": "krupnov-studio",
+    "images": [
+      "preview.png",
+      "1.png",
+      "2.png"
+    ],
+    "best": false
+  },
+  {
+    "id": "09",
+    "name": "Neo Cryo",
+    "task": "Логотип для стартапа.",
+    "description": "",
+    "service": [
+      "Логотипы"
+    ],
+    "stack": [
+      "Illustrator"
+    ],
+    "path": "neo-cryo",
+    "images": [
+      "preview.png",
+      "1.png",
+      "2.png"
+    ],
+    "best": false
+  },
+  {
+    "id": "10",
+    "name": "Rivulet Digital",
+    "task": "Логотип для стартапа.",
+    "description": "",
+    "service": [
+      "Логотипы"
+    ],
+    "stack": [
+      "Illustrator"
+    ],
+    "path": "rivulet-digital",
+    "images": [
+      "preview.png",
+      "1.png",
+      "2.png"
+    ],
+    "best": false
+  },
+  {
+    "id": "11",
+    "name": "Backeland",
+    "task": "Баннеры для социальных сетей.",
+    "description": "",
+    "service": [
+      "Web дизайн"
+    ],
+    "stack": [
+      "Illustrator",
+      "Photoshop"
+    ],
+    "path": "backeland",
+    "images": [
+      "preview.png",
+      "1.png",
+      "2.png"
+    ],
+    "best": false
+  }
+]

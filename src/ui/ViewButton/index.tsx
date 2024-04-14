@@ -19,7 +19,7 @@ export const ViewButton = () => {
         animate={{ y: 0 }}
         transition={{ delay: 2.5, duration: 1.5, type: "spring", stiffness: 40 }}
       >
-        <Link href='/projects'>Лучшие кейсы</Link>
+        <Link href='#best'>Лучшие кейсы</Link>
       </motion.div>
       <motion.div
         initial={{ x: '100vw' }}

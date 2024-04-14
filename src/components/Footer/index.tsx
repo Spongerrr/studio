@@ -3,26 +3,20 @@
 import { Container, Svg } from '@/helpers'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Link from 'next/link'
 
 import s from './styles.module.scss'
-import Link from 'next/link'
 
 export const Footer = () => {
   const [isVisible, setIsVisible] = useState(false)
   return (
     <div className={s.wrapper}>
-      <AnimatePresence>
-        {!isVisible &&
-          <motion.button
-            className={s.button}
-            onClick={() => setIsVisible(!isVisible)}
-            initial={{ opacity: 0}}
-            animate={{ opacity: 1}}
-            exit={{ opacity: 0}}
-          >
-            <Svg type='email' />
-          </motion.button>}
-      </AnimatePresence>
+      <button
+        className={s.button}
+        onClick={() => setIsVisible(!isVisible)}
+      >
+        <Svg type='email' />
+      </button>
       <AnimatePresence>
         {isVisible &&
           <motion.footer
@@ -37,13 +31,13 @@ export const Footer = () => {
                   <Link href='mailto:hello@penguinstudio.com'>hello@penguinstudio.com</Link>
                 </div>
                 <div>
-                  <Link href='tel:+41798272164'>+4-(179)-827-21-64</Link>
+                  <Link href='tel:+41798272164'>+41 (79) 827-21-64</Link>
                 </div>
               </div>
             </Container>
           </motion.footer>
         }
       </AnimatePresence>
-    </div>
+    </div >
   )
 }

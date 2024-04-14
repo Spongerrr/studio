@@ -2,8 +2,8 @@
 
 import { Container } from '@/helpers'
 import { motion } from 'framer-motion'
-import data from '@/helpers/data.json'
 import { Logo } from '@/ui'
+import projects from '@/data/projects.json'
 
 import s from './styles.module.scss'
 
@@ -43,7 +43,7 @@ interface ProjectCardProps {
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
-  const item = data.find((p) => p.path === project)
+  const item = projects.find((p) => p.path === project)
 
   return (
     <div className={s.project}>
@@ -51,18 +51,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         <Container size='stretch'>
           <motion.div className={s.desktop} initial='hidden' animate='visible' variants={container}>
             <motion.div variants={image} className={s.images}>
-              <img
-                src={`/projects/${item?.path}/preview.png`}
-                alt={'alt'}
-              />
-              <img
-                src={`/projects/${item?.path}/1.png`}
-                alt={'alt'}
-              />
-              <img
-                src={`/projects/${item?.path}/2.png`}
-                alt={'alt'}
-              />
+              {item.images.map((image) => (
+                <img src={`/projects/${item.path}/${image}`} alt='image'></img>
+              ))}
             </motion.div>
             <div className={s.text}>
               <motion.h2 variants={animation}>{item?.name}</motion.h2>

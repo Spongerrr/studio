@@ -1,11 +1,12 @@
 'use client'
 
 import { useState } from 'react'
-import { Container, Svg } from '@/helpers'
+import { Container, Modal, Svg } from '@/helpers'
 import { Project } from '@/ui'
 import { motion, AnimatePresence } from 'framer-motion'
-import data from '@/helpers/data.json'
-import locales from '@public/locales/ru.json'
+import projects from '@/data/projects.json'
+import services from '@/data/services.json'
+import stack from '@/data/stack.json'
 
 import s from './styles.module.scss'
 
@@ -23,29 +24,44 @@ const container = {
 
 
 export const Projects = () => {
-  const [filter, setFilter] = useState<string[]>([])
+  const [filterServices, setFilterServices] = useState<string[]>([])
+  const [filterStack, setFilterStack] = useState<string[]>([])
   const [selectedCategories, setSelectedCategories] = useState<string[]>([])
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisibleStack, setIsVisibleStack] = useState(false)
+  const [isVisibleService, setIsVisibleService] = useState(false)
   const [itemVisibility, setItemVisibility] = useState<{ [key: string]: boolean }>(
-    locales.services.items.reduce((acc: any, item: any) => {
+    services.reduce((acc: any, item: any) => {
       acc[item.id] = false;
       return acc;
     }, {})
   )
 
-  const handleFilterChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFilterChangeServices = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value, checked } = event.target
     if (checked) {
-      setFilter((prevFilter) => [...prevFilter, value])
+      setFilterServices((prevFilter) => [...prevFilter, value])
       setSelectedCategories((prevCategories) => [...prevCategories, value])
     } else {
-      setFilter((prevFilter) => prevFilter.filter((item) => item !== value))
+      setFilterServices((prevFilter) => prevFilter.filter((item) => item !== value))
       setSelectedCategories((prevCategories) => prevCategories.filter((item) => item !== value))
     }
   }
 
+  const handleFilterChangeStack = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { value, checked } = event.target
+    if (checked) {
+      setFilterStack((prevFilter) => [...prevFilter, value])
+      setSelectedCategories((prevCategories) => [...prevCategories, value])
+    } else {
+      setFilterStack((prevFilter) => prevFilter.filter((item) => item !== value))
+      setSelectedCategories((prevCategories) => prevCategories.filter((item) => item !== value))
+    }
+  }
+
+
   const handleFilterClear = () => {
-    setFilter([])
+    setFilterStack([])
+    setFilterServices([])
     setSelectedCategories([])
   }
 
@@ -60,102 +76,154 @@ export const Projects = () => {
   return (
     <Container size='stretch'>
       <motion.div
-        className={!isVisible ? s.projects : s.projectsActive}
+        className={s.projects}
         variants={container}
         initial='hidden'
         animate='visible'
       >
         <h2>Проекты</h2>
-        <button onClick={() => setIsVisible(!isVisible)}>Фильтр</button>
+        <div className={s.buttons}>
+          <button onClick={() => setIsVisibleService(!isVisibleService)}>Услуга</button>
+          <button onClick={() => setIsVisibleStack(!isVisibleStack)}>Стек</button>
+        </div>
         <div className={s.content}>
-          {data
-            .filter((project) => filter.length === 0 || project.stack.some((tech) => filter.includes(tech)))
+          {projects
+            .filter((project) => filterStack.length === 0 || project.stack.some((tech) => filterStack.includes(tech)))
+            .filter((project) => filterServices.length === 0 || project.service.some((tech) => filterServices.includes(tech)))
             .map((project) => (
               <Project key={project.id} project={project} type='default' />
             ))}
         </div>
-        <AnimatePresence>
-          {isVisible && (
-            <motion.div
-              className={s.filterBackground}
-              onClick={() => setIsVisible(false)}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            >
-              <motion.div
-                className={s.filter}
-                onClick={(e) => e.stopPropagation()}
-                initial={{ top: 0 }}
-                animate={{ top: '50%' }}
-                exit={{ top: 0 }}
-              >
-                <h3>Выберите способ сортировки</h3>
-                <div className={s.modal}>
-                  <div className={s.modalContent}>
-                    {locales.skills.items.map((item) => (
-                      <div key={item.id} className={s.item}>
-                        <strong
-                          onClick={() => toggleItemVisibility(item.id)}
-                          className={itemVisibility[item.id] ? s.strong : s.strongActive}
+        <Modal
+          isOpen={isVisibleService}
+          onClose={() => setIsVisibleService(false)}
+        >
+          <div className={s.filterWrapper}>
+            <h3>Услуга</h3>
+            <div className={s.wrapper}>
+              <div className={s.categories}>
+                {services.map((item) => (
+                  <div key={item.id} className={s.item}>
+                    <strong
+                      className={itemVisibility[item.id] ? s.itemTitle : s.itemTitleActive}
+                      onClick={() => toggleItemVisibility(item.id)}
+                    >
+                      <Svg type='menu' />
+                      {item.title}
+                    </strong>
+                    <AnimatePresence>
+                      {itemVisibility[item.id] && (
+                        <motion.div
+                          className={s.boxes}
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
                         >
-                          <Svg type='menu' />
-                          {item.title}
-                        </strong>
-                        <AnimatePresence>
-                          {itemVisibility[item.id] &&
-                            <motion.div
-                              className={s.blocks}
-                              key={item.id}
-                              initial={{ opacity: 0, y: -10 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              exit={{ opacity: 0, y: -10 }}
-                            >
-                              {item.skills.map((category) => (
-                                <label key={category}>
-                                  <input
-                                    type='checkbox'
-                                    value={category}
-                                    checked={filter.includes(category)}
-                                    onChange={handleFilterChange}
-                                  />
-                                  {category}
-                                </label>
-                              ))}
-                            </motion.div>
-                          }
-                        </AnimatePresence>
-                      </div>
-
-                    ))}
+                          {item.categories.map((cat) => (
+                            <label key={cat}>
+                              <input
+                                type='checkbox'
+                                value={cat}
+                                checked={filterServices.includes(cat)}
+                                onChange={handleFilterChangeServices}
+                              />
+                              {cat}
+                            </label>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
-                  <div className={s.selected}>
-                    <span>Выбранные категории</span>
-                    <div className={s.selectedItems}>
-                      <AnimatePresence>
-                        {selectedCategories.map((c) => (
-                          <motion.p
-                            key={c}
-                            initial={{ opacity: 0, x: -50 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: 50 }}
-                          >
-                            {c}
-                          </motion.p>
-                        ))}
-                      </AnimatePresence>
-                    </div>
+                ))}
+              </div>
+              <div className={s.selected}>
+                <span className={s.selectedTitle}>Выбранные услуги</span>
+                <div className={s.selectedCategories}>
+                  {selectedCategories.map((cat) => (
+                    <motion.p
+                      key={cat}
+                      className={s.selectedCategory}
+                      initial={{ opacity: 0, x: -50 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: 50 }}
+                    >
+                      {cat}
+                    </motion.p>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className={s.buttons}>
+              <button onClick={() => setIsVisibleService(false)}>{filterServices.length === 0 ? 'Скрыть' : 'Применить'}</button>
+              <button onClick={() => handleFilterClear()}>Сбросить</button>
+            </div>
+          </div>
+        </Modal>
+        <Modal
+          isOpen={isVisibleStack}
+          onClose={() => setIsVisibleStack(false)}
+        >
+          <div className={s.filterWrapper}>
+            <h3>Стек</h3>
+            <div className={s.wrapper}>
+              <div className={s.categories}>
+                {stack.map((item) => (
+                  <div key={item.id} className={s.item}>
+                    <strong
+                      className={itemVisibility[item.id] ? s.itemTitle : s.itemTitleActive}
+                      onClick={() => toggleItemVisibility(item.id)}
+                    >
+                      <Svg type='menu' />
+                      {item.title}
+                    </strong>
+                    <AnimatePresence>
+                      {itemVisibility[item.id] && (
+                        <motion.div
+                          className={s.boxes}
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
+                        >
+                          {item.skills.map((skill) => (
+                            <label key={skill}>
+                              <input
+                                type='checkbox'
+                                value={skill}
+                                checked={filterStack.includes(skill)}
+                                onChange={handleFilterChangeStack}
+                              />
+                              {skill}
+                            </label>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
+                ))}
+              </div>
+              <div className={s.selected}>
+                <span className={s.selectedTitle}>Выбранный стек</span>
+                <div className={s.selectedCategories}>
+                  {selectedCategories.map((cat) => (
+                    <motion.p
+                      key={cat}
+                      className={s.selectedCategory}
+                      initial={{ opacity: 0, x: -50 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: 50 }}>
+                      {cat}
+                    </motion.p>
+                  ))}
                 </div>
-                <div className={s.buttons}>
-                  <button onClick={() => setIsVisible(false)}>Скрыть</button>
-                  <button onClick={() => handleFilterClear()}>Сбросить</button>
-                </div>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </motion.div>
-    </Container>
+              </div>
+            </div>
+            <div className={s.buttons}>
+              <button onClick={() => setIsVisibleStack(false)}>{filterStack.length === 0 ? 'Скрыть' : 'Применить'}</button>
+              <button onClick={() => handleFilterClear()}>Сбросить</button>
+            </div>
+          </div>
+        </Modal>
+      </motion.div >
+    </Container >
   )
 }

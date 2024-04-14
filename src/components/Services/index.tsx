@@ -8,6 +8,18 @@ import locales from '@public/locales/ru.json'
 
 import s from './styles.module.scss'
 
+const titleAnimation = {
+  hidden: {
+    x: -500,
+    opacity: 0
+  },
+  visible: {
+    x: 0,
+    opacity: 1
+  }
+}
+
+
 export const Services = () => {
   const [items, setItems] = useState(locales.services.items)
 
@@ -19,8 +31,13 @@ export const Services = () => {
 
   return (
     <Container size='default' >
-      <div className={s.services}>
-        <h2>{locales.services.title}</h2>
+      <motion.div
+        className={s.services}
+        initial='hidden'
+        whileInView='visible'
+        viewport={{ amount: 0.2 }}
+      >
+        <motion.h2 variants={titleAnimation}>{locales.services.title}</motion.h2>
         <div className={s.content}>
           <div className={s.desktop}>
             {locales.services.items.map((item, index) => (
@@ -75,7 +92,7 @@ export const Services = () => {
             </Button>
           </div>
         </div>
-      </div>
+      </motion.div>
     </Container>
   )
 }

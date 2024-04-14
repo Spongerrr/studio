@@ -3,6 +3,9 @@ export interface IProject {
   name: string
   task: string
   description: string
+  service: string[]
   stack: string[]
   path: string
+  images: string[]
+  best: boolean
 }

@@ -1,6 +1,7 @@
 import { Footer, Header } from '@/components'
 import { montserrat, unbounded } from './fonts'
 import type { Metadata, Viewport } from 'next'
+import { Analytics } from '@vercel/analytics/next'
 
 import '@/styles/globals.scss'
 
@@ -27,6 +28,7 @@ const RootLayout = (({ children }: { children: React.ReactNode }) => {
         <Header />
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   )
