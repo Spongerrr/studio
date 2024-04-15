@@ -40,7 +40,7 @@ export const Hero = () => {
             ))}
           </motion.h1>
           <ViewButton />
-          <Statistic team={77} projects={30} experience={2} />
+          <Statistic team={25} projects={34} experience={126} />
         </div>
       </div>
     </Container>

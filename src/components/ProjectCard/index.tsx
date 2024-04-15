@@ -1,6 +1,6 @@
 'use client'
 
-import { Container } from '@/helpers'
+import { CaseHandler, Container } from '@/helpers'
 import { motion } from 'framer-motion'
 import { Logo } from '@/ui'
 import projects from '@/data/projects.json'
@@ -92,16 +92,16 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             />
             <div className={s.text}>
               <div >
-                <span>24</span>
-                <p>часа на проект</p>
+                <span>{item.statistic.hours}</span>
+                <p>{`${CaseHandler('hour', item.statistic.hours)} на проект`}</p>
               </div>
               <div>
-                <span>3</span>
-                <p>разработчика</p>
+                <span>{item.statistic.dev}</span>
+                <p>{CaseHandler('dev', item.statistic.dev)}</p>
               </div>
               <div>
-                <span>2</span>
-                <p>дизайнера</p>
+                <span>{item.statistic.des}</span>
+                <p>{CaseHandler('des', item.statistic.des)}</p>
               </div>
             </div>
             <img

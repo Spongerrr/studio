@@ -17,7 +17,12 @@
       "1.png",
       "2.png"
     ],
-    "best": true
+    "best": true,
+    "statistic": {
+      "hours": 18,
+      "dev": 0,
+      "des": 2
+    }
   },
   {
     "id": "02",
@@ -42,7 +47,12 @@
       "1.png",
       "2.png"
     ],
-    "best": false
+    "best": false,
+    "statistic": {
+      "hours": 36,
+      "dev": 1,
+      "des": 2
+    }
   },
   {
     "id": "03",
@@ -65,7 +75,12 @@
       "1.png",
       "2.png"
     ],
-    "best": true
+    "best": true,
+    "statistic": {
+      "hours": 25,
+      "dev": 2,
+      "des": 1
+    }
   },
   {
     "id": "04",
@@ -89,7 +104,12 @@
       "1.png",
       "2.png"
     ],
-    "best": true
+    "best": true,
+    "statistic": {
+      "hours": 10,
+      "dev": 1,
+      "des": 1
+    }
   },
   {
     "id": "05",
@@ -113,7 +133,12 @@
       "1.png",
       "2.png"
     ],
-    "best": true
+    "best": true,
+    "statistic": {
+      "hours": 45,
+      "dev": 4,
+      "des": 2
+    }
   },
   {
     "id": "06",
@@ -139,7 +164,12 @@
       "1.png",
       "2.png"
     ],
-    "best": false
+    "best": false,
+    "statistic": {
+      "hours": 28,
+      "dev": 2,
+      "des": 2
+    }
   },
   {
     "id": "07",
@@ -158,7 +188,12 @@
       "1.png",
       "2.png"
     ],
-    "best": false
+    "best": false,
+    "statistic": {
+      "hours": 6,
+      "dev": 0,
+      "des": 1
+    }
   },
   {
     "id": "08",
@@ -177,7 +212,12 @@
       "1.png",
       "2.png"
     ],
-    "best": false
+    "best": false,
+    "statistic": {
+      "hours": 4,
+      "dev": 0,
+      "des": 1
+    }
   },
   {
     "id": "09",
@@ -196,7 +236,12 @@
       "1.png",
       "2.png"
     ],
-    "best": false
+    "best": false,
+    "statistic": {
+      "hours": 5,
+      "dev": 0,
+      "des": 1
+    }
   },
   {
     "id": "10",
@@ -215,7 +260,12 @@
       "1.png",
       "2.png"
     ],
-    "best": false
+    "best": false,
+    "statistic": {
+      "hours": 12,
+      "dev": 0,
+      "des": 1
+    }
   },
   {
     "id": "11",
@@ -235,6 +285,35 @@
       "1.png",
       "2.png"
     ],
-    "best": false
+    "best": false,
+    "statistic": {
+      "hours": 3,
+      "dev": 0,
+      "des": 1
+    }
+  },
+  {
+    "id": "12",
+    "name": "Backpack Autotrade",
+    "task": "Бот, который накручивает объём на бирже.",
+    "description": "",
+    "service": [
+      "Парсеры и скрипты для автоматизации"
+    ],
+    "stack": [
+      "Python"
+    ],
+    "path": "backpack-autotrade",
+    "images": [
+      "preview.png",
+      "1.png",
+      "2.png"
+    ],
+    "best": false,
+    "statistic": {
+      "hours": 32,
+      "dev": 1,
+      "des": 0
+    }
   }
 ]
