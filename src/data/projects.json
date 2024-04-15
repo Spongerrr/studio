@@ -49,9 +49,9 @@
     ],
     "best": false,
     "statistic": {
-      "hours": 36,
+      "hours": 136,
       "dev": 1,
-      "des": 2
+      "des": 1
     }
   },
   {
@@ -77,8 +77,8 @@
     ],
     "best": true,
     "statistic": {
-      "hours": 25,
-      "dev": 2,
+      "hours": 125,
+      "dev": 1,
       "des": 1
     }
   },
@@ -106,9 +106,9 @@
     ],
     "best": true,
     "statistic": {
-      "hours": 10,
+      "hours": 60,
       "dev": 1,
-      "des": 1
+      "des": 0
     }
   },
   {
@@ -135,9 +135,9 @@
     ],
     "best": true,
     "statistic": {
-      "hours": 45,
+      "hours": 210,
       "dev": 4,
-      "des": 2
+      "des": 0
     }
   },
   {
@@ -166,9 +166,9 @@
     ],
     "best": false,
     "statistic": {
-      "hours": 28,
-      "dev": 2,
-      "des": 2
+      "hours": 128,
+      "dev": 1,
+      "des": 1
     }
   },
   {

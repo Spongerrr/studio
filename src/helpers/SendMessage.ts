@@ -5,13 +5,13 @@ export async function SendMessage(data: IForm): Promise<void> {
   const chatId = "-1002096835060"
 
   const message = `
-      Заявка с формы контактов:
-      Выбранная опция: ${data.select}
-      Имя: ${data.name}
-      Email: ${data.email}
-      Телефон: ${data.tel}
-      Текст: ${data.text}
-    `
+**Заявка с формы контактов:**
+1. **Выбранная опция:** ${data.select}
+2. **Имя:** ${data.name}
+3. **Email:** ${data.email}
+4. **Телефон:** ${data.tel}
+5. **Текст:** \`\`\`${data.text}\`\`\`
+`
 
   const messageUrl = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&parse_mode=html&text=${encodeURIComponent(message)}`
   const fileUrl = `https://api.telegram.org/bot${token}/sendDocument?chat_id=${chatId}`
