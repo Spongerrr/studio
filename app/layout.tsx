@@ -1,7 +1,7 @@
 import { Footer, Header } from '@/components'
 import { montserrat, unbounded } from './fonts'
 import type { Metadata, Viewport } from 'next'
-import { Analytics } from '@vercel/analytics/next'
+import { Analytics } from '@vercel/analytics/react'
 
 import '@/styles/globals.scss'
 
