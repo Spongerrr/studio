@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 
 import s from './styles.module.scss'
+import { fixStats } from '@/helpers'
 
 interface StatisticProps {
   team: number
@@ -12,16 +13,6 @@ interface StatisticProps {
 }
 
 export const Statistic: React.FC<StatisticProps> = ({ team, projects, experience }) => {
-  const initialStyle = {
-    rotateX: 180
-  }
-
-  const animateStyle = {
-    rotateX: 360,
-    transition: {
-      duration: 3.5
-    }
-  }
 
   const [animatedValues, setAnimatedValues] = useState({
     team: 0,
@@ -75,7 +66,7 @@ export const Statistic: React.FC<StatisticProps> = ({ team, projects, experience
         transition={{ delay: 2, duration: 1.5, type: "spring", stiffness: 40 }}
       >
         <span>{animatedValues.projects}</span>
-        <p>успешных проектов</p>
+        <p>{fixStats('projects', projects)}</p>
       </motion.div>
       <motion.div
         initial={{ x: '100vw' }}

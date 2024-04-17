@@ -2,10 +2,10 @@
 
 import { useState } from 'react'
 import { Svg } from '@/helpers'
-import { CSSTransition } from 'react-transition-group'
 import locales from '@public/locales/ru.json'
 
 import s from './styles.module.scss'
+import { AnimatePresence, motion } from 'framer-motion'
 
 interface DropdownProps {
   select: string | null
@@ -54,51 +54,46 @@ export const Dropdown: React.FC<DropdownProps> = ({ select, setSelect }) => {
           onClick={toggleDropdown}
           readOnly
         />
-        <CSSTransition
-          in={isOpen}
-          timeout={500}
-          mountOnEnter
-          unmountOnExit
-          classNames={{
-            enterActive: s.enter,
-            exitActive: s.exit
-          }}
-        >
-          <div className={s.wrapper}>
-            {items.map((item, index) => (
-              <div key={item.id} className={s.item}>
-                <div onClick={() => toggleCategory(index)} className={s.title}>
-                  <Svg type='menu' />
-                  <strong>{item.title}</strong>
-                </div>
-                <CSSTransition
-                  in={item.isOpen}
-                  timeout={500}
-                  mountOnEnter
-                  unmountOnExit
-                  classNames={{
-                    enterActive: s.enter,
-                    exitActive: s.exit
-                  }}
-                >
-                  <div>
-                    {item.categories.map((subItem, subIndex) => (
-                      <div
-                        key={subItem}
-                        onClick={() => handleCategorySelect(subItem)}
-                        className={`
-                      ${s.subItem}
-                      ${index === items.length - 1 && subIndex === item.categories.length - 1 ? s.lastSubItem : ''}`}
-                      >
-                        {subItem}
-                      </div>
-                    ))}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              className={s.wrapper}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+            >
+              {items.map((item, index) => (
+                <div key={item.id} className={s.item}>
+                  <div onClick={() => toggleCategory(index)} className={s.title}>
+                    <Svg type='menu' />
+                    <strong>{item.title}</strong>
                   </div>
-                </CSSTransition>
-              </div>
-            ))}
-          </div>
-        </CSSTransition>
+                  <AnimatePresence>
+                    {item.isOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                      >
+                        {item.categories.map((subItem, subIndex) => (
+                          <div
+                            key={subItem}
+                            onClick={() => handleCategorySelect(subItem)}
+                            className={`
+                        ${s.subItem}
+                        ${index === items.length - 1 && subIndex === item.categories.length - 1 ? s.lastSubItem : ''}`}
+                          >
+                            {subItem}
+                          </div>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   )

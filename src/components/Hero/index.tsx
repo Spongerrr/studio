@@ -3,6 +3,8 @@
 import { Container } from '@/helpers'
 import { Statistic, ViewButton } from '@/ui'
 import { motion } from 'framer-motion'
+import { IProject } from '@/models'
+import projects from '@/data/projects.json'
 
 import s from './styles.module.scss'
 
@@ -40,7 +42,7 @@ export const Hero = () => {
             ))}
           </motion.h1>
           <ViewButton />
-          <Statistic team={25} projects={34} experience={126} />
+          <Statistic team={25} projects={projects.length} experience={126} />
         </div>
       </div>
     </Container>

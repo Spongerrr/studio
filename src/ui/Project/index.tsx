@@ -27,19 +27,19 @@ export const Project: React.FC<ProjectProps> = ({ project, type }) => {
       key={project.id}
       className={type === 'default' ? s.project : s.projectSlider}
     >
-  <Link href={`/projects/${project.path}`}>
-    <Image
-      src={`/projects/${project.path}/preview.png`}
-      alt={project.name}
-      width={900}
-      height={500}
-      className={s.image}
-    />
-    <div className={s.text}>
-      <h3>{project.name}</h3>
-      <p>{project.task}</p>
-    </div>
-  </Link>
+      <Link href={`/projects/${project.path}`} className={s.link}>
+        <Image
+          src={`/projects/${project.path}/preview.png`}
+          alt={project.name}
+          width={900}
+          height={500}
+          className={s.image}
+        />
+        <div className={s.text}>
+          <h3>{project.name}</h3>
+          <p>{project.task}</p>
+        </div>
+      </Link>
     </motion.div >
   )
 }

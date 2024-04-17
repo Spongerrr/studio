@@ -1,5 +1,5 @@
 import { Footer, Header } from '@/components'
-import { montserrat, unbounded } from './fonts'
+import { montserrat, unbounded } from '../fonts'
 import type { Metadata, Viewport } from 'next'
 import { Analytics } from '@vercel/analytics/react'
 
@@ -12,7 +12,10 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   keywords: 'Penguin Studio, веб-разработка, мобильные приложения, дизайн сайтов, фирменный стиль, IT-решения, разработка ПО, технологическое партнерство, инновации в бизнесе',
-  description: 'Penguin Studio, веб-разработка, мобильные приложения, дизайн сайтов, фирменный стиль, IT-решения, разработка ПО, технологическое партнерство, инновации в бизнесе'
+  description: 'Penguin Studio, веб-разработка, мобильные приложения, дизайн сайтов, фирменный стиль, IT-решения, разработка ПО, технологическое партнерство, инновации в бизнесе',
+  icons: {
+    icon: '/icon.png',
+  }
 }
 
 const root = 'root'

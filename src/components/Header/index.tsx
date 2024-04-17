@@ -1,12 +1,11 @@
 'use client'
 
 import Link from 'next/link'
-import { CSSTransition } from 'react-transition-group'
 import { useState } from 'react'
 import { Logo } from '@/ui'
 import { Container, Svg } from '@/helpers'
 import { usePath } from '@/hooks'
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { usePathname } from 'next/navigation'
 
 import s from './styles.module.scss'
@@ -57,29 +56,26 @@ export const Header = () => {
             >
               <Svg type='burger' />
             </button>
-            <CSSTransition
-              in={showMenu}
-              timeout={500}
-              mountOnEnter
-              unmountOnExit
-              classNames={{
-                enterActive: s.enter,
-                exit: s.exit
-              }}
-            >
-              <ul>
-                <li>
-                  <Link href='/projects' onClick={() => setShowMenu(false)}>
-                    Проекты
-                  </Link>
-                </li>
-                <li>
-                  <Link href='/contacts' onClick={() => setShowMenu(false)}>
-                    Контакты
-                  </Link>
-                </li>
-              </ul>
-            </CSSTransition>
+            <AnimatePresence>
+              {showMenu && (
+                <motion.ul
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                >
+                  <li>
+                    <Link href='/projects' onClick={() => setShowMenu(false)}>
+                      Проекты
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href='/contacts' onClick={() => setShowMenu(false)}>
+                      Контакты
+                    </Link>
+                  </li>
+                </motion.ul>
+              )}
+            </AnimatePresence>
           </nav>
         </div>
       </Container>

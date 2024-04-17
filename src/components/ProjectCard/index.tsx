@@ -1,6 +1,6 @@
 'use client'
 
-import { CaseHandler, Container } from '@/helpers'
+import { fixStats, Container } from '@/helpers'
 import { motion } from 'framer-motion'
 import { Logo } from '@/ui'
 import projects from '@/data/projects.json'
@@ -58,16 +58,16 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             <div className={s.text}>
               <motion.h2 variants={animation}>{item?.name}</motion.h2>
               <motion.div variants={animation}>
-                <span>24</span>
-                <p>часа на проект</p>
+                <span>{item.statistic.hours}</span>
+                <p>{`${fixStats('hour', item.statistic.hours)} на проект`}</p>
               </motion.div>
               <motion.div variants={animation}>
-                <span>3</span>
-                <p>разработчика</p>
+                <span>{item.statistic.dev}</span>
+                <p>{fixStats('dev', item.statistic.dev)}</p>
               </motion.div>
               <motion.div variants={animation}>
-                <span>2</span>
-                <p>дизайнера</p>
+                <span>{item.statistic.des}</span>
+                <p>{fixStats('des', item.statistic.des)}</p>
               </motion.div>
               <motion.div variants={animation}>
                 <p>{item?.task}</p>
@@ -93,15 +93,15 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             <div className={s.text}>
               <div >
                 <span>{item.statistic.hours}</span>
-                <p>{`${CaseHandler('hour', item.statistic.hours)} на проект`}</p>
+                <p>{`${fixStats('hour', item.statistic.hours)} на проект`}</p>
               </div>
               <div>
                 <span>{item.statistic.dev}</span>
-                <p>{CaseHandler('dev', item.statistic.dev)}</p>
+                <p>{fixStats('dev', item.statistic.dev)}</p>
               </div>
               <div>
                 <span>{item.statistic.des}</span>
-                <p>{CaseHandler('des', item.statistic.des)}</p>
+                <p>{fixStats('des', item.statistic.des)}</p>
               </div>
             </div>
             <img
