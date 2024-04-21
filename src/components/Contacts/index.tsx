@@ -7,6 +7,8 @@ import { IForm } from '@/models'
 import { motion, AnimatePresence } from 'framer-motion'
 
 import s from './styles.module.scss'
+import { useLang } from '@/hooks'
+import { observer } from 'mobx-react-lite'
 
 const titleAnimation = {
   hidden: {
@@ -19,7 +21,7 @@ const titleAnimation = {
   }
 }
 
-export const Contacts = () => {
+export const Contacts = observer(() => {
   const [errors, setErrors] = useState<string[]>([])
   const [sended, setSended] = useState(false)
   const [form, setForm] = useState<IForm>({
@@ -31,12 +33,18 @@ export const Contacts = () => {
     file: null
   })
 
+  const phoneValidation = (form.tel && !/^[0-9+]+$/.test(form.tel)) ? false : true;
+    
+
+  const data = useLang()?.contacts
+
   const handleChange = (key: keyof IForm, value: string | File | null) => {
     setForm(prevState => ({
       ...prevState,
       [key]: value
     }))
   }
+
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -50,7 +58,7 @@ export const Contacts = () => {
       }
     })
 
-    if (dataErrors.length > 0) {
+    if (dataErrors.length > 0 || phoneValidation) {
       setErrors(dataErrors)
     } else {
       SendMessage(form)
@@ -61,13 +69,13 @@ export const Contacts = () => {
 
   return (
     <Container size='default'>
-      <motion.div 
-      className={s.contacts}
-      initial='hidden'
-      whileInView='visible'
-      viewport={{amount: 0.2}}
+      <motion.div
+        className={s.contacts}
+        initial='hidden'
+        whileInView='visible'
+        viewport={{ amount: 0.2 }}
       >
-        <motion.h2 variants={titleAnimation}>{!sended ? 'Свяжитесь с нами' : 'Остались вопросы?'}</motion.h2>
+        <motion.h2 variants={titleAnimation}>{!sended ? data?.title : data?.title_2}</motion.h2>
         <div className={s.content}>
           <AnimatePresence>
             {!sended &&
@@ -78,12 +86,13 @@ export const Contacts = () => {
                 exit={{ opacity: 0 }}
               >
                 <Dropdown
+                  label={data?.label.service}
                   select={form.select}
                   setSelect={(value) => handleChange('select', value)}
                 />
                 <Input
                   id='name'
-                  label='Имя'
+                  label={data?.label.name}
                   type='text'
                   value={form.name}
                   onChange={(value) => handleChange('name', value)}
@@ -91,7 +100,7 @@ export const Contacts = () => {
                 />
                 <Input
                   id='email'
-                  label='Email'
+                  label={data?.label.mail}
                   type='email'
                   value={form.email}
                   onChange={(value) => handleChange('email', value)}
@@ -99,17 +108,19 @@ export const Contacts = () => {
                 />
                 <Input
                   id='phone'
-                  label='Телефон'
+                  label={data?.label.phone}
                   type='tel'
                   value={form.tel}
                   onChange={(value) => handleChange('tel', value)}
                   required={true}
                 />
                 <Textarea
+                  label={data?.label.wishes}
                   value={form.text}
                   onChange={(value) => handleChange('text', value)}
                 />
                 <InputFile
+                  label={data?.label.files}
                   fileName={form.file ? form.file.name : ''}
                   onChange={(value) => handleChange('file', value)}
                 />
@@ -121,19 +132,19 @@ export const Contacts = () => {
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: '-100vw' }}
                     >
-                      Не заполнены обязательные поля. (Помечены звёздочкой)
+                      {data?.label.error}
                     </motion.p>
                   }
                 </AnimatePresence>
-                <button type='submit' >Отправить</button>
+                <button type='submit' >{data?.label.submit}</button>
               </motion.form>
             }
           </AnimatePresence>
           <div className={s.info}>
             <div>
-              <p>Давайте обсудим вашу идею</p>
-              <strong>+41 76 1234567</strong>
-              <strong>hello@penguinstudio.com</strong>
+              <p>{data?.text}</p>
+              <strong>+41 79 827 21 64</strong>
+              <strong>corp@penguin-studio.tech</strong>
             </div>
             <Logo type='default' />
           </div>
@@ -141,4 +152,4 @@ export const Contacts = () => {
       </motion.div>
     </Container>
   )
-}
+})

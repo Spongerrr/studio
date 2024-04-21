@@ -5,17 +5,20 @@ import { CSSTransition } from 'react-transition-group'
 import { useState } from 'react'
 import { Logo } from '@/ui'
 import { Container, Svg } from '@/helpers'
-import { usePath } from '@/hooks'
+import { useLang, usePath } from '@/hooks'
 import { motion } from 'framer-motion'
 import { usePathname } from 'next/navigation'
+import { LangSwitch } from '@/ui/LangSwitch'
+import { observer } from 'mobx-react-lite'
 
 import s from './styles.module.scss'
 
-export const Header = () => {
+export const Header = observer(() => {
   const [showMenu, setShowMenu] = useState(false)
 
   const path = usePathname()
   const title = usePath(path)
+  const data = useLang()?.header
 
   return (
     <header className={s.header}>
@@ -43,10 +46,13 @@ export const Header = () => {
           <nav className={s.desktop}>
             <ul>
               <li>
-                <Link href={'/projects'}>Проекты</Link>
+                <Link href={'/projects'}>{data?.projects}</Link>
               </li>
               <li>
-                <Link href={'/contacts'}>Контакты</Link>
+                <Link href={'/contacts'}>{data?.contacts}</Link>
+              </li>
+              <li>
+                <LangSwitch setShowMenu={setShowMenu} />
               </li>
             </ul>
           </nav>
@@ -55,7 +61,7 @@ export const Header = () => {
               className={showMenu ? s.burgerWhite : s.burger}
               onClick={() => setShowMenu(!showMenu)}
             >
-              <Svg type='burger' />
+              {showMenu ? <Svg type='close' /> : <Svg type='burger' />}
             </button>
             <CSSTransition
               in={showMenu}
@@ -70,13 +76,16 @@ export const Header = () => {
               <ul>
                 <li>
                   <Link href='/projects' onClick={() => setShowMenu(false)}>
-                    Проекты
+                    {data?.projects}
                   </Link>
                 </li>
                 <li>
                   <Link href='/contacts' onClick={() => setShowMenu(false)}>
-                    Контакты
+                    {data?.contacts}
                   </Link>
+                </li>
+                <li className={s.switcher}>
+                  <LangSwitch setShowMenu={setShowMenu} />
                 </li>
               </ul>
             </CSSTransition>
@@ -85,4 +94,4 @@ export const Header = () => {
       </Container>
     </header>
   )
-}
+})

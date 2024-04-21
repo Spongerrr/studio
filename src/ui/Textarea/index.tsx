@@ -7,9 +7,10 @@ import s from './styles.module.scss'
 interface TextareaProps {
   value: string
   onChange: (value: string) => void
+  label: string | undefined
 }
 
-export const Textarea: React.FC<TextareaProps> = ({ value, onChange }) => {
+export const Textarea: React.FC<TextareaProps> = ({ value, onChange, label }) => {
   const textareaRef = useRef<HTMLTextAreaElement>(null)
 
   useEffect(() => {
@@ -34,7 +35,7 @@ export const Textarea: React.FC<TextareaProps> = ({ value, onChange }) => {
 
   return (
     <div>
-      <label>Пожелания</label>
+      <label>{label}</label>
       <textarea
       ref={textareaRef}
       value={value}

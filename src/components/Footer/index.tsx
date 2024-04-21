@@ -11,11 +11,42 @@ export const Footer = () => {
   const [isVisible, setIsVisible] = useState(false)
   return (
     <div className={s.wrapper}>
+      <div className={s.socials}>
+        <Link href='#'>
+          <img src='/socials/be.png' alt='behance' />
+        </Link>
+        <Link href='https://www.linkedin.com/company/penguin-studio-development/'>
+          <img src='/socials/in.png' alt='linkedin' />
+        </Link>
+        <Link href='https://www.instagram.com/penguin_studio_development?igsh=YWNsNjY1bGNtMDl1&utm_source=qr'>
+          <img src='/socials/ig.png' alt='instagram' />
+        </Link>
+      </div>
+      <AnimatePresence>
+        {isVisible &&
+          <motion.div
+            className={s.socialsActive}
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            exit={{opacity: 0}}
+          >
+            <Link href='#'>
+              <img src='/socials/be.png' alt='behance' />
+            </Link>
+            <Link href='https://www.linkedin.com/company/penguin-studio-development/'>
+              <img src='/socials/in.png' alt='linkedin' />
+            </Link>
+            <Link href='https://www.instagram.com/penguin_studio_development?igsh=YWNsNjY1bGNtMDl1&utm_source=qr'>
+              <img src='/socials/ig.png' alt='instagram' />
+            </Link>
+          </motion.div>
+        }
+      </AnimatePresence>
       <button
-        className={s.button}
+        className={isVisible ? s.buttonActive : s.button}
         onClick={() => setIsVisible(!isVisible)}
       >
-        <Svg type='email' />
+        {isVisible ? <Svg type='close' /> : <Svg type='email' />}
       </button>
       <AnimatePresence>
         {isVisible &&
@@ -28,10 +59,10 @@ export const Footer = () => {
             <Container size='stretch'>
               <div className={s.content}>
                 <div>
-                  <Link href='mailto:hello@penguinstudio.com'>hello@penguinstudio.com</Link>
+                  <Link href='mailto:corp@penguin-studio.tech.com'>corp@penguin-studio.tech</Link>
                 </div>
                 <div>
-                  <Link href='tel:+41798272164'>+41 (79) 827-21-64</Link>
+                  <Link href='tel:+41798272164'>+41 79 827 21 64</Link>
                 </div>
               </div>
             </Container>

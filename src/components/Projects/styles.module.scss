@@ -42,6 +42,20 @@
   }
 }
 
+.projectError {
+  padding-block: 15vh;
+  font-size: 48px;
+  line-height: 52px;
+  font-weight: 800;
+  grid-column: span 3;
+  text-align: center;
+
+  @media (max-width: 920px) {
+    font-size: 30px;
+    line-height: 36px;
+  }
+}
+
 .filterWrapper {
   h3 {
     margin-bottom: 5vh;
@@ -81,6 +95,7 @@
   align-items: center;
   gap: 0.5vw;
   padding-bottom: 0.5vh;
+  cursor: pointer;
 
   svg {
     transform: rotate(0);

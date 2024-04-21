@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { Svg } from '@/helpers'
-import { CSSTransition } from 'react-transition-group'
+import { AnimatePresence, motion } from 'framer-motion'
 import locales from '@public/locales/ru.json'
 
 import s from './styles.module.scss'
@@ -10,9 +10,10 @@ import s from './styles.module.scss'
 interface DropdownProps {
   select: string | null
   setSelect: (e: string) => void
+  label: string | undefined
 }
 
-export const Dropdown: React.FC<DropdownProps> = ({ select, setSelect }) => {
+export const Dropdown: React.FC<DropdownProps> = ({ select, setSelect, label }) => {
   const [items, setItems] = useState(locales.services.items)
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
@@ -44,7 +45,7 @@ export const Dropdown: React.FC<DropdownProps> = ({ select, setSelect }) => {
   return (
     <div>
       <label className={s.label}>
-        Выберите категорию
+        {label}
         <p>*</p>
       </label>
       <div className={s.dropdown}>
@@ -54,51 +55,46 @@ export const Dropdown: React.FC<DropdownProps> = ({ select, setSelect }) => {
           onClick={toggleDropdown}
           readOnly
         />
-        <CSSTransition
-          in={isOpen}
-          timeout={500}
-          mountOnEnter
-          unmountOnExit
-          classNames={{
-            enterActive: s.enter,
-            exitActive: s.exit
-          }}
-        >
-          <div className={s.wrapper}>
-            {items.map((item, index) => (
-              <div key={item.id} className={s.item}>
-                <div onClick={() => toggleCategory(index)} className={s.title}>
-                  <Svg type='menu' />
-                  <strong>{item.title}</strong>
-                </div>
-                <CSSTransition
-                  in={item.isOpen}
-                  timeout={500}
-                  mountOnEnter
-                  unmountOnExit
-                  classNames={{
-                    enterActive: s.enter,
-                    exitActive: s.exit
-                  }}
-                >
-                  <div>
-                    {item.categories.map((subItem, subIndex) => (
-                      <div
-                        key={subItem}
-                        onClick={() => handleCategorySelect(subItem)}
-                        className={`
-                      ${s.subItem}
-                      ${index === items.length - 1 && subIndex === item.categories.length - 1 ? s.lastSubItem : ''}`}
-                      >
-                        {subItem}
-                      </div>
-                    ))}
+        <AnimatePresence>
+          {isOpen &&
+            <motion.div
+              className={s.wrapper}
+              initial={{ opacity: 0, y: '-10px' }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: '-10px' }}
+            >
+              {items.map((item, index) => (
+                <div key={item.id} className={s.item}>
+                  <div onClick={() => toggleCategory(index)} className={s.title}>
+                    <Svg type='menu' />
+                    <strong>{item.title}</strong>
                   </div>
-                </CSSTransition>
-              </div>
-            ))}
-          </div>
-        </CSSTransition>
+                  <AnimatePresence>
+                    {item.isOpen &&
+                      <motion.div
+                        initial={{ opacity: 0, y: '-10px' }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: '-10px' }}
+                      >
+                        {item.categories.map((subItem, subIndex) => (
+                          <div
+                            key={subItem}
+                            onClick={() => handleCategorySelect(subItem)}
+                            className={`
+                    ${s.subItem}
+                    ${index === items.length - 1 && subIndex === item.categories.length - 1 ? s.lastSubItem : ''}`}
+                          >
+                            {subItem}
+                          </div>
+                        ))}
+                      </motion.div>
+                    }
+                  </AnimatePresence>
+                </div>
+              ))}
+            </motion.div>
+          }
+        </AnimatePresence>
       </div>
     </div>
   )

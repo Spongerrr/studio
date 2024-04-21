@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { IProject } from '@/models'
 import { motion } from 'framer-motion'
+import { observer } from 'mobx-react-lite'
 
 import s from './styles.module.scss'
 
@@ -20,7 +21,9 @@ interface ProjectProps {
   type: 'slider' | 'default'
 }
 
-export const Project: React.FC<ProjectProps> = ({ project, type }) => {
+export const Project: React.FC<ProjectProps> = observer(({ project, type }) => {
+  
+
   return (
     <motion.div
       variants={item}
@@ -42,4 +45,4 @@ export const Project: React.FC<ProjectProps> = ({ project, type }) => {
   </Link>
     </motion.div >
   )
-}
+})

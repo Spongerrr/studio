@@ -4,11 +4,11 @@ import { useState } from 'react'
 import { Container, Modal, Svg } from '@/helpers'
 import { Project } from '@/ui'
 import { motion, AnimatePresence } from 'framer-motion'
-import projects from '@/data/projects.json'
-import services from '@/data/services.json'
-import stack from '@/data/stack.json'
 
 import s from './styles.module.scss'
+import { useLang } from '@/hooks'
+import { observer } from 'mobx-react-lite'
+import { IProject } from '@/models'
 
 const container = {
   hidden: { opacity: 1, scale: 0 },
@@ -23,15 +23,19 @@ const container = {
 }
 
 
-export const Projects = () => {
+export const Projects = observer(() => {
+  const data = useLang()?.projects
+  const services = useLang()?.services
+  const stack = useLang()?.stack
+
   const [filterServices, setFilterServices] = useState<string[]>([])
   const [filterStack, setFilterStack] = useState<string[]>([])
   const [selectedCategories, setSelectedCategories] = useState<string[]>([])
   const [isVisibleStack, setIsVisibleStack] = useState(false)
   const [isVisibleService, setIsVisibleService] = useState(false)
   const [itemVisibility, setItemVisibility] = useState<{ [key: string]: boolean }>(
-    services.reduce((acc: any, item: any) => {
-      acc[item.id] = false;
+    services?.items.reduce((acc: any, item: any) => {
+      acc[item?.title] = false;
       return acc;
     }, {})
   )
@@ -58,6 +62,9 @@ export const Projects = () => {
     }
   }
 
+  const filteredProjects = data?.items
+    .filter((project) => filterStack.length === 0 || project.stack.some((tech) => filterStack.includes(tech)))
+    .filter((project) => filterServices.length === 0 || project.service.some((tech) => filterServices.includes(tech)))
 
   const handleFilterClear = () => {
     setFilterStack([])
@@ -81,18 +88,18 @@ export const Projects = () => {
         initial='hidden'
         animate='visible'
       >
-        <h2>Проекты</h2>
+        <h2>{data?.title}</h2>
         <div className={s.buttons}>
-          <button onClick={() => setIsVisibleService(!isVisibleService)}>Услуга</button>
-          <button onClick={() => setIsVisibleStack(!isVisibleStack)}>Стек</button>
+          <button onClick={() => setIsVisibleService(!isVisibleService)}>{data?.service_filter}</button>
+          <button onClick={() => setIsVisibleStack(!isVisibleStack)}>{data?.stack_filter}</button>
         </div>
         <div className={s.content}>
-          {projects
-            .filter((project) => filterStack.length === 0 || project.stack.some((tech) => filterStack.includes(tech)))
-            .filter((project) => filterServices.length === 0 || project.service.some((tech) => filterServices.includes(tech)))
-            .map((project) => (
+          {filteredProjects && filteredProjects?.length !== 0 ? filteredProjects.map((project) => (
               <Project key={project.id} project={project} type='default' />
-            ))}
+            ))
+            :
+            <span className={s.projectError}>{data?.not_found}</span>
+            }
         </div>
         <Modal
           isOpen={isVisibleService}
@@ -102,24 +109,24 @@ export const Projects = () => {
             <h3>Услуга</h3>
             <div className={s.wrapper}>
               <div className={s.categories}>
-                {services.map((item) => (
-                  <div key={item.id} className={s.item}>
+                {services?.items.map((item) => (
+                  <div key={item.title} className={s.item}>
                     <strong
-                      className={itemVisibility[item.id] ? s.itemTitle : s.itemTitleActive}
-                      onClick={() => toggleItemVisibility(item.id)}
+                      className={itemVisibility[item.title] ? s.itemTitle : s.itemTitleActive}
+                      onClick={() => toggleItemVisibility(item?.title)}
                     >
                       <Svg type='menu' />
                       {item.title}
                     </strong>
                     <AnimatePresence>
-                      {itemVisibility[item.id] && (
+                      {itemVisibility[item?.title] && (
                         <motion.div
                           className={s.boxes}
                           initial={{ opacity: 0, y: -10 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -10 }}
                         >
-                          {item.categories.map((cat) => (
+                          {item.list.map((cat) => (
                             <label key={cat}>
                               <input
                                 type='checkbox'
@@ -137,7 +144,7 @@ export const Projects = () => {
                 ))}
               </div>
               <div className={s.selected}>
-                <span className={s.selectedTitle}>Выбранные услуги</span>
+                <span className={s.selectedTitle}>{data?.service_title}</span>
                 <div className={s.selectedCategories}>
                   {selectedCategories.map((cat) => (
                     <motion.p
@@ -154,8 +161,8 @@ export const Projects = () => {
               </div>
             </div>
             <div className={s.buttons}>
-              <button onClick={() => setIsVisibleService(false)}>{filterServices.length === 0 ? 'Скрыть' : 'Применить'}</button>
-              <button onClick={() => handleFilterClear()}>Сбросить</button>
+              <button onClick={() => setIsVisibleService(false)}>{filterServices.length === 0 ? data?.hide_filter : data?.apply_filter}</button>
+              <button onClick={() => handleFilterClear()}>{data?.reset_filter}</button>
             </div>
           </div>
         </Modal>
@@ -167,24 +174,24 @@ export const Projects = () => {
             <h3>Стек</h3>
             <div className={s.wrapper}>
               <div className={s.categories}>
-                {stack.map((item) => (
-                  <div key={item.id} className={s.item}>
+                {stack?.items.map((item) => (
+                  <div key={item?.title} className={s.item}>
                     <strong
-                      className={itemVisibility[item.id] ? s.itemTitle : s.itemTitleActive}
-                      onClick={() => toggleItemVisibility(item.id)}
+                      className={itemVisibility[item?.title] ? s.itemTitle : s.itemTitleActive}
+                      onClick={() => toggleItemVisibility(item?.title)}
                     >
                       <Svg type='menu' />
                       {item.title}
                     </strong>
                     <AnimatePresence>
-                      {itemVisibility[item.id] && (
+                      {itemVisibility[item?.title] && (
                         <motion.div
                           className={s.boxes}
                           initial={{ opacity: 0, y: -10 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -10 }}
                         >
-                          {item.skills.map((skill) => (
+                          {item.items.map((skill) => (
                             <label key={skill}>
                               <input
                                 type='checkbox'
@@ -202,7 +209,7 @@ export const Projects = () => {
                 ))}
               </div>
               <div className={s.selected}>
-                <span className={s.selectedTitle}>Выбранный стек</span>
+                <span className={s.selectedTitle}>{data?.service_title}</span>
                 <div className={s.selectedCategories}>
                   {selectedCategories.map((cat) => (
                     <motion.p
@@ -218,12 +225,12 @@ export const Projects = () => {
               </div>
             </div>
             <div className={s.buttons}>
-              <button onClick={() => setIsVisibleStack(false)}>{filterStack.length === 0 ? 'Скрыть' : 'Применить'}</button>
-              <button onClick={() => handleFilterClear()}>Сбросить</button>
+              <button onClick={() => setIsVisibleStack(false)}>{filterStack.length === 0 ? data?.hide_filter : data?.apply_filter}</button>
+              <button onClick={() => handleFilterClear()}>{data?.reset_filter}</button>
             </div>
           </div>
         </Modal>
       </motion.div >
     </Container >
   )
-}
+})

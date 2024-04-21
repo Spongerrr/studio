@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 
 import s from './styles.module.scss'
 
@@ -10,7 +11,7 @@ interface ModalProps {
   children: React.ReactNode
 }
 
-export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
+export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children}) => {
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -46,12 +47,18 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
   }
 
   return (
-    <>
+    <AnimatePresence>
       {isOpen && (
-        <div className={s.background} onClick={handleBackgroundClick}>
+        <motion.div
+          className={s.background}
+          onClick={handleBackgroundClick}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
           <div className={s.content}>{children}</div>
-        </div>
+        </motion.div>
       )}
-    </>
+    </AnimatePresence>
   )
 }

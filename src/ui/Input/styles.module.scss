@@ -13,5 +13,16 @@
 
   input {
     @include input;
+
+  }
+
+  .phone {
+    position: relative;
+    display: flex;
+
+    :nth-child(1) {
+      top: 2.2vh;
+      left: 28vw
+    }
   }
 }

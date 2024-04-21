@@ -1,6 +1,5 @@
 'use client'
 
-import projects from '@/data/projects.json'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Project } from '@/ui'
 import { EffectCoverflow, Autoplay, Pagination } from 'swiper/modules'
@@ -12,6 +11,8 @@ import 'swiper/scss/effect-coverflow'
 import 'swiper/scss/autoplay'
 import 'swiper/scss/pagination'
 import 'swiper/scss'
+import { useLang } from '@/hooks'
+import { observer } from 'mobx-react-lite'
 
 const titleAnimation = {
   hidden: {
@@ -24,7 +25,9 @@ const titleAnimation = {
   }
 }
 
-export const Slider = () => {
+export const Slider = observer(() => {
+
+  const data = useLang()?.projects
 
   return (
     <motion.div
@@ -34,7 +37,7 @@ export const Slider = () => {
       whileInView='visible'
       viewport={{ amount: 0.2 }}
     >
-      <motion.h2 variants={titleAnimation}>Лучшие проекты</motion.h2>
+      <motion.h2 variants={titleAnimation}>{data?.best}</motion.h2>
       <Swiper
         effect={'coverflow'}
         grabCursor={true}
@@ -57,7 +60,7 @@ export const Slider = () => {
           slideShadows: false
         }}
       >
-        {projects.map((project) => (
+        {data?.items.map((project) => (
           project.best && (
             <SwiperSlide key={project.id} className={s.slider}>
               <div className={s.container}>
@@ -69,4 +72,4 @@ export const Slider = () => {
       </Swiper>
     </motion.div>
   )
-}
+})

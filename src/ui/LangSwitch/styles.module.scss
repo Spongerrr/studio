@@ -1,0 +1,39 @@
+@use '@styles' as *;
+
+.switcher {
+  position: relative;
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    span:hover {
+      background: var(--color-brand);
+    }
+  }
+}
+
+.list {
+  position: absolute;
+  top: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+}
+
+@media (max-width: 920px) {
+  .list {
+    flex-direction: row;
+    top: 80px;
+    gap: 30px;
+    left: -150%;
+    background: transparent;
+  }
+}

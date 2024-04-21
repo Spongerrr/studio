@@ -12,14 +12,6 @@
   }
 }
 
-.enter {
-  animation: dropdown 0.6s forwards;
-}
-
-.exit {
-  animation: dropdown 0.6s reverse;
-}
-
 .label {
   display: flex;
   gap: 0.5vw;
@@ -79,12 +71,14 @@
   color: var(--color-body-bg);
   background: var(--color-gray-700);
   cursor: pointer;
+  transition: all .3s;
 
   &:not(:last-child) {
     margin-bottom: 0.5vh;
   }
 
   &:hover {
+    transition: all .5s;
     color: var(--color-body);
     background: var(--color-primary);
   }

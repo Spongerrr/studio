@@ -47,6 +47,11 @@
   display: none;
 }
 
+.mobile .switcher span {
+  color: #fff;
+  font-weight: 800;
+}
+
 .mobile {
   ul {
     display: flex;
@@ -90,9 +95,12 @@
 
 .burgerWhite {
   @extend .burger;
+  width: 40px;
+  scale: (2);
   
   path {
     stroke: var(--color-body-bg);
+    fill: #fff;
   }
 }
 

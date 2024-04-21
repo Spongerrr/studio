@@ -1,19 +1,33 @@
 'use client'
 
 import { Container, Svg } from '@/helpers'
-import { motion } from 'framer-motion'
-import locales from '@public/locales/ru.json'
+import { color, motion } from 'framer-motion'
 
 import s from './styles.module.scss'
+import { useLang } from '@/hooks'
 
-const blocksAnimation = {
+const container = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.2
+    }
+  }
+}
+
+const animateItem = {
   hidden: {
-    y: 100,
-    opacity: 0
+    y: 20,
+    opacity: 0,
+    color: '#252525'
   },
   visible: {
     y: 0,
-    opacity: 1
+    opacity: 1,
+    color: "#ffffff"
   }
 }
 
@@ -28,7 +42,18 @@ const titleAnimation = {
   }
 }
 
+const stackAnimation = {
+  hidden: {
+    color: '#252525',
+  },
+  whileInView: {
+    color: '#fff',
+  }
+}
+
 export const Skills = () => {
+  const data = useLang()?.stack
+
   return (
     <motion.div
       className={s.skills}
@@ -37,21 +62,26 @@ export const Skills = () => {
       viewport={{ amount: 0.2 }}
     >
       <Container size='default'>
-        <motion.h2 variants={titleAnimation}>{locales.skills.title}</motion.h2>
+        <motion.h2 variants={titleAnimation}>{data?.title}</motion.h2>
         <div className={s.wrapper}>
-          {locales.skills.items.map((item) => (
-            <div key={item.id}>
+          {data?.items.map((item) => (
+            <div key={item.title}>
               <div className={s.title}>
                 <Svg type='menu' />
                 <strong>{item.title}</strong>
               </div>
-              <div className={s.items}>
-                {item.skills.map((skill) => (
+              <motion.div
+                className={s.items}
+                initial='hidden'
+                whileInView='visible'
+                variants={container}
+              >
+                {item.items.map((skill) => (
                   <div key={skill}>
-                    <p>{skill}</p>
+                    <motion.p variants={animateItem}>{skill}</motion.p>
                   </div>
                 ))}
-              </div>
+              </motion.div>
             </div>
           ))}
         </div>

@@ -6,6 +6,8 @@ import { Logo } from '@/ui'
 import projects from '@/data/projects.json'
 
 import s from './styles.module.scss'
+import { useLang } from '@/hooks'
+import { observer } from 'mobx-react-lite'
 
 const container = {
   hidden: { opacity: 1, scale: 0 },
@@ -42,8 +44,10 @@ interface ProjectCardProps {
   project: string
 }
 
-export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
-  const item = projects.find((p) => p.path === project)
+export const ProjectCard: React.FC<ProjectCardProps> = observer(({ project }) => {
+  const data = useLang()?.projects
+
+  const item = data?.items.find((p) => p.path === project)
 
   return (
     <div className={s.project}>
@@ -58,16 +62,16 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             <div className={s.text}>
               <motion.h2 variants={animation}>{item?.name}</motion.h2>
               <motion.div variants={animation}>
-                <span>24</span>
-                <p>часа на проект</p>
+                <span>{item.statistic.hours}</span>
+                <p>{data?.stat_1}</p>
               </motion.div>
               <motion.div variants={animation}>
-                <span>3</span>
-                <p>разработчика</p>
+                <span>{item.statistic.dev}</span>
+                <p>{data?.stat_2}</p>
               </motion.div>
               <motion.div variants={animation}>
-                <span>2</span>
-                <p>дизайнера</p>
+                <span>{item.statistic.des}</span>
+                <p>{data?.stat_3}</p>
               </motion.div>
               <motion.div variants={animation}>
                 <p>{item?.task}</p>
@@ -130,4 +134,4 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       )}
     </div>
   )
-}
+})

@@ -1,3 +1,4 @@
+import { StoreContext } from '@/helpers'
 import { Footer, Header } from '@/components'
 import { montserrat, unbounded } from './fonts'
 import type { Metadata, Viewport } from 'next'
@@ -17,20 +18,26 @@ export const metadata: Metadata = {
 
 const root = 'root'
 
-const RootLayout = (({ children }: { children: React.ReactNode }) => {
+interface Props {
+  children: React.ReactNode
+}
+
+const RootLayout = (({ children }: Props) => {
 
   return (
-    <html
-      className={`${root} ${montserrat.variable} ${unbounded.variable}`}
-      lang='ru'
-    >
-      <body>
-        <Header />
-        {children}
-        <Footer />
-        <Analytics />
-      </body>
-    </html>
+    <StoreContext>
+      <html
+        className={`${root} ${montserrat.variable} ${unbounded.variable}`}
+        lang='ru'
+      >
+        <body>
+          <Header />
+          {children}
+          <Footer />
+          <Analytics />
+        </body>
+      </html>
+    </StoreContext>
   )
 })
 
