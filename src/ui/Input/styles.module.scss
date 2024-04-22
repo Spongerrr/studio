@@ -22,7 +22,23 @@
 
     :nth-child(1) {
       top: 2.2vh;
-      left: 28vw
+      left: 28vw;
+
+      @media (max-width: 1100px) {
+        left: 27vw;
+      }
+
+      @media (max-width: 920px) {
+        left: 40vw;
+      }
+
+      @media (max-width: 720px) {
+        left: 38vw;
+      }
+
+      @media (max-width: 560px) {
+        left: 85vw;
+      }
     }
   }
 }

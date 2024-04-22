@@ -59,15 +59,15 @@ export const tRu = {
     "title_2": "Остались вопросы?",
     "text": "Давайте обсудим вашу идею",
     "label": {
-			"service": "Направление услуги",
-			"name": "Имя",
-			"mail": "Email",
-			"phone": "Телефон",
-			"wishes": "Комментарий",
-			"files": "Загрузка дополнительных файлов",
+      "service": "Направление услуги",
+      "name": "Имя",
+      "mail": "Email",
+      "phone": "Телефон",
+      "wishes": "Комментарий",
+      "files": "Загрузка дополнительных файлов",
       "submit": "Отправить",
       "error": "Не заполнены обязательные поля. (Помечены звёздочкой)"
-		}
+    }
   },
   stack: {
     "title": "Стек",
@@ -114,8 +114,8 @@ export const tRu = {
     "reset_filter": "Сбросить",
     "apply_filter": "Применить",
     "hide_filter": "Скрыть",
-    "not_found": 
-    `Такого проекта у нас ещё нет\n(Но мы обязательно исправимся!)😉`,
+    "not_found":
+      `Такого проекта у нас ещё нет\n(Но мы обязательно исправимся!)😉`,
     "items": [
       {
         "id": "01",
@@ -130,6 +130,7 @@ export const tRu = {
           "Photoshop"
         ],
         "path": "ksd",
+        "url": "https://www.figma.com/file/q1v1ct7QfqR5JuIbZ5Hzd8/Said?type=design&node-id=701%3A9&mode=design&t=EhMeUG0PV2jhpVtL-1",
         "images": [
           "preview.png",
           "1.png",
@@ -160,6 +161,7 @@ export const tRu = {
           "Illustrator"
         ],
         "path": "chudo-igla",
+        "url": "https://chudo-igla.ru/",
         "images": [
           "preview.png",
           "1.png",
@@ -188,6 +190,7 @@ export const tRu = {
           "Node.JS"
         ],
         "path": "invoice-profi",
+        "url": "https://invoiceprofi.ru/",
         "images": [
           "preview.png",
           "1.png",
@@ -217,6 +220,7 @@ export const tRu = {
           "Figma"
         ],
         "path": "sens-collective",
+        "url": "sens-collective.com/",
         "images": [
           "preview.png",
           "1.png",
@@ -246,6 +250,7 @@ export const tRu = {
           "Figma"
         ],
         "path": "ivolga",
+        "url": "",
         "images": [
           "preview.png",
           "1.png",
@@ -277,6 +282,7 @@ export const tRu = {
           "Photoshop"
         ],
         "path": "dva-biskvita",
+        "url": "https://dvabiskvita.ru/",
         "images": [
           "preview.png",
           "1.png",
@@ -301,6 +307,7 @@ export const tRu = {
           "Illustrator"
         ],
         "path": "goods-mood",
+        "url": "",
         "images": [
           "preview.png",
           "1.png",
@@ -325,6 +332,7 @@ export const tRu = {
           "Illustrator"
         ],
         "path": "krupnov-studio",
+        "url": "",
         "images": [
           "preview.png",
           "1.png",
@@ -349,6 +357,7 @@ export const tRu = {
           "Illustrator"
         ],
         "path": "neo-cryo",
+        "url": "",
         "images": [
           "preview.png",
           "1.png",
@@ -373,6 +382,7 @@ export const tRu = {
           "Illustrator"
         ],
         "path": "rivulet-digital",
+        "url": "",
         "images": [
           "preview.png",
           "1.png",
@@ -398,6 +408,7 @@ export const tRu = {
           "Photoshop"
         ],
         "path": "backeland",
+        "url": "",
         "images": [
           "preview.png",
           "1.png",
@@ -422,6 +433,7 @@ export const tRu = {
           "Python"
         ],
         "path": "backpack-autotrade",
+        "url": "",
         "images": [
           "preview.png",
           "1.png",

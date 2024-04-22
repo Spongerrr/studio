@@ -128,6 +128,7 @@ export const tFr = {
           "Photoshop"
         ],
         "path": "ksd",
+        "url": "https://www.figma.com/file/q1v1ct7QfqR5JuIbZ5Hzd8/Said?type=design&node-id=701%3A9&mode=design&t=EhMeUG0PV2jhpVtL-1",
         "images": [
           "preview.png",
           "1.png",
@@ -158,6 +159,7 @@ export const tFr = {
           "Illustrator"
         ],
         "path": "chudo-igla",
+        "url": "https://chudo-igla.ru/",
         "images": [
           "preview.png",
           "1.png",
@@ -186,6 +188,7 @@ export const tFr = {
           "Node.JS"
         ],
         "path": "invoice-profi",
+        "url": "https://invoiceprofi.ru/",
         "images": [
           "preview.png",
           "1.png",
@@ -215,6 +218,7 @@ export const tFr = {
           "Figma"
         ],
         "path": "sens-collective",
+        "url": "sens-collective.com/",
         "images": [
           "preview.png",
           "1.png",
@@ -244,6 +248,7 @@ export const tFr = {
           "Figma"
         ],
         "path": "ivolga",
+        "url": "",
         "images": [
           "preview.png",
           "1.png",
@@ -275,6 +280,7 @@ export const tFr = {
           "Photoshop"
         ],
         "path": "dva-biskvita",
+        "url": "https://dvabiskvita.ru/",
         "images": [
           "preview.png",
           "1.png",
@@ -299,6 +305,7 @@ export const tFr = {
           "Illustrator"
         ],
         "path": "goods-mood",
+        "url": "",
         "images": [
           "preview.png",
           "1.png",
@@ -323,6 +330,7 @@ export const tFr = {
           "Illustrator"
         ],
         "path": "krupnov-studio",
+        "url": "",
         "images": [
           "preview.png",
           "1.png",
@@ -347,6 +355,7 @@ export const tFr = {
           "Illustrator"
         ],
         "path": "neo-cryo",
+        "url": "",
         "images": [
           "preview.png",
           "1.png",
@@ -371,6 +380,7 @@ export const tFr = {
           "Illustrator"
         ],
         "path": "rivulet-digital",
+        "url": "",
         "images": [
           "preview.png",
           "1.png",
@@ -396,6 +406,7 @@ export const tFr = {
           "Photoshop"
         ],
         "path": "backeland",
+        "url": "",
         "images": [
           "preview.png",
           "1.png",
@@ -420,6 +431,7 @@ export const tFr = {
           "Python"
         ],
         "path": "backpack-autotrade",
+        "url": "",
         "images": [
           "preview.png",
           "1.png",

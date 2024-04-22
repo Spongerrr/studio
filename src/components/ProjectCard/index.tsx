@@ -2,7 +2,7 @@
 
 import { CaseHandler, Container } from '@/helpers'
 import { motion } from 'framer-motion'
-import { Logo } from '@/ui'
+import { Button, Logo } from '@/ui'
 import projects from '@/data/projects.json'
 
 import s from './styles.module.scss'
@@ -46,6 +46,7 @@ interface ProjectCardProps {
 
 export const ProjectCard: React.FC<ProjectCardProps> = observer(({ project }) => {
   const data = useLang()?.projects
+  const view = useLang()?.hero.view
 
   const item = data?.items.find((p) => p.path === project)
 
@@ -81,6 +82,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = observer(({ project }) =>
                   <p key={i}>{i}</p>
                 ))}
               </motion.div>
+              {item.url &&
+              <motion.div variants={animation}>
+                <Button br='soft' color='primary' href={item.url} children={view}/>
+              </motion.div>
+              }
             </div>
           </motion.div>
           <motion.div
