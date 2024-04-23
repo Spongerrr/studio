@@ -5,6 +5,7 @@ import { color, motion } from 'framer-motion'
 
 import s from './styles.module.scss'
 import { useLang } from '@/hooks'
+import { observer } from 'mobx-react-lite'
 
 const container = {
   hidden: { opacity: 1, scale: 0 },
@@ -51,7 +52,7 @@ const stackAnimation = {
   }
 }
 
-export const Skills = () => {
+export const Skills = observer(() => {
   const data = useLang()?.stack
 
   return (
@@ -77,7 +78,7 @@ export const Skills = () => {
                 variants={container}
               >
                 {item.items.map((skill) => (
-                  <div key={skill}>
+                  <div key={skill} >
                     <motion.p variants={animateItem}>{skill}</motion.p>
                   </div>
                 ))}
@@ -88,4 +89,4 @@ export const Skills = () => {
       </Container>
     </motion.div>
   )
-}
+})

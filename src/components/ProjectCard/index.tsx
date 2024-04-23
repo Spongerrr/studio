@@ -77,6 +77,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = observer(({ project }) =>
               <motion.div variants={animation}>
                 <p>{item?.task}</p>
               </motion.div>
+              <motion.div variants={animation}>
+                <p>{item?.description}</p>
+              </motion.div>
               <motion.div variants={animation} className={s.stack}>
                 {item.stack.map((i) => (
                   <p key={i}>{i}</p>
@@ -119,7 +122,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = observer(({ project }) =>
               alt={'alt'}
             />
             <div>
-              <p>{item?.task}</p>
+              <p style={{fontWeight: '500'}}>{item?.description}</p>
             </div>
             <img
               src={`/projects/${item?.path}/2.png`}

@@ -118,8 +118,8 @@ export const tEn = {
       {
         "id": "01",
         "name": "KSD Company",
-        "task": "Creating design for a landing page.",
-        "description": "",
+        "task": "KSD Company landing page design: modern, minimalist, user-friendly.",
+        "description": "For KSD Company, a modern landing page was designed, aimed at presenting the company and its services. The page design was inspired by the aesthetics of the keymap.ua site, which ensured the creation of a clean, minimalist interface with a focus on convenience and functionality. The main page includes several key blocks: a welcome block that introduces visitors to the company, a services section with detailed descriptions of what KSD Company offers, a portfolio with examples of completed projects and significant achievements, and contact information with a feedback form for the convenience of potential clients. This project demonstrates our approach to creating intuitive and aesthetically pleasing digital solutions that enhance business interactions.",
         "service": [
           "Web design"
         ],
@@ -138,15 +138,16 @@ export const tEn = {
         "statistic": {
           "hours": 18,
           "dev": 0,
-          "des": 2
+          "des": 1
         }
       },
       {
         "id": "02",
-        "name": "Wonder Needle",
-        "task": "Design and layout of an online store.",
-        "description": "",
+        "name": "Чудо игла",
+        "task": `Entirely new design for "Чудо игла" online store: convenient, stylish, functional.`,
+        "description": `A fresh, modern design was created from scratch for the "Чудо игла" online store, covering all aspects of the user interface to ensure easy navigation and a visually pleasing interaction experience. The project included designing an intuitive page structure, attractive product catalogs, and functional elements such as a shopping cart and product filtering system.`,
         "service": [
+          "Online stores",
           "Web design"
         ],
         "stack": [
@@ -156,7 +157,9 @@ export const tEn = {
           "JavaScript",
           "JQuery",
           "SCSS",
-          "Illustrator"
+          "Illustrator",
+          "Gulp",
+          "Figma"
         ],
         "path": "chudo-igla",
         "url": "https://chudo-igla.ru/",
@@ -167,16 +170,16 @@ export const tEn = {
         ],
         "best": false,
         "statistic": {
-          "hours": 36,
+          "hours": 136,
           "dev": 1,
-          "des": 2
+          "des": 1
         }
       },
       {
         "id": "03",
         "name": "Invoice Profi",
-        "task": "Layout and integration into WordPress.",
-        "description": "Our team successfully adapted the existing design, enhancing it according to our requirements and expectations. Additionally, we created an innovative audio player from scratch, entirely based on JavaScript technology. Moreover, we developed a plugin for the site providing functionality for pricing, access management, and tracking of uploaded files. An important step was also the creation of a mechanism for sending invoices and reports in PDF format for our client's system.",
+        "task": `Development and launch of the "Invoice Profi" website on WordPress as per client’s design.`,
+        "description": `The "Invoice Profi" project involved developing a website based on a design provided by the client and implementing it on WordPress. The task was to accurately translate the visual concept into a functional website, maintaining technical requirements and ensuring ease of content management.`,
         "service": [
           "Multipage websites"
         ],
@@ -185,7 +188,10 @@ export const tEn = {
           "CSS",
           "WordPress",
           "JavaScript",
-          "Node.JS"
+          "Bootstrap",
+          "JQuery",
+          "Gulp",
+          "Figma"
         ],
         "path": "invoice-profi",
         "url": "https://invoiceprofi.ru/",
@@ -196,16 +202,16 @@ export const tEn = {
         ],
         "best": true,
         "statistic": {
-          "hours": 25,
-          "dev": 2,
+          "hours": 125,
+          "dev": 1,
           "des": 1
         }
       },
       {
         "id": "04",
         "name": "Sens Collective",
-        "task": "Development of a new page on CMS 1C-Bitrix",
-        "description": "Our team successfully adapted the existing design, enhancing it according to our requirements and expectations. Additionally, we created an innovative audio player from scratch, entirely based on JavaScript technology. Moreover, we developed a plugin for the site providing functionality for pricing, access management, and tracking of uploaded files. An important step was also the creation of a mechanism for sending invoices and reports in PDF format for our client's system.",
+        "task": `Addition and integration of a new page to the "Sens Collective" site via CMS 1C-Bitrix.`,
+        "description": `For "Sens Collective", a new strategy case studies page was added to the existing site managed with CMS 1C-Bitrix. The task involved integrating this new page according to the provided design, ensuring it blended seamlessly with the site's overall structure. `,
         "service": [
           "Multipage websites"
         ],
@@ -218,7 +224,7 @@ export const tEn = {
           "Figma"
         ],
         "path": "sens-collective",
-        "url": "sens-collective.com/",
+        "url": "https://sens-collective.com/projects/strategiya/",
         "images": [
           "preview.png",
           "1.png",
@@ -226,22 +232,23 @@ export const tEn = {
         ],
         "best": true,
         "statistic": {
-          "hours": 10,
+          "hours": 75,
           "dev": 1,
-          "des": 1
+          "des": 0
         }
       },
       {
         "id": "05",
         "name": "Ivolga",
-        "task": "Development of an online store from scratch.",
-        "description": "",
+        "task": `Development of "Ivolga" online store with CMS 1C-Bitrix, Streamerce.ru, and CRM integration.`,
+        "description": `The project for the "Ivolga" fashion boutique involved creating an online store based on the client's design using CMS 1C-Bitrix. Features include a product catalog, clothing collections, a personal user account, a loyalty system, and a live streaming page integrated with Streamerce.ru. Product integration from "1C" software and a CRM system into Bitrix24 was also implemented.`,
         "service": [
           "Online stores"
         ],
         "stack": [
           "HTML",
           "SCSS",
+          "Webpack",
           "JavaScript",
           "PHP",
           "1C-Bitrix",
@@ -256,16 +263,16 @@ export const tEn = {
         ],
         "best": true,
         "statistic": {
-          "hours": 45,
+          "hours": 245,
           "dev": 4,
-          "des": 2
+          "des": 0
         }
       },
       {
         "id": "06",
-        "name": "Two Biscuits",
-        "task": "Design and development of an online store.",
-        "description": "",
+        "name": "Два бисквита",
+        "task": `Development and launch of the "Два бисквита" online store with advanced design and enhanced functionality.`,
+        "description": `The project "Два бисквита" involved the design and implementation of an online store with attractive visual design and enhanced user interface. Key design goals included drawing attention to products, improving user interaction with the site, and increasing conversions. Advanced technologies such as AJAX were used for dynamic content loading, making the site more interactive and user-friendly.`,
         "service": [
           "Online stores",
           "Web design"
@@ -288,16 +295,16 @@ export const tEn = {
         ],
         "best": false,
         "statistic": {
-          "hours": 28,
-          "dev": 2,
-          "des": 2
+          "hours": 278,
+          "dev": 1,
+          "des": 1
         }
       },
       {
         "id": "07",
         "name": "Goods Mood",
-        "task": "Logo for a store.",
-        "description": "",
+        "task": `Designing "Goods Mood" logo: energetic, modern, memorable.`,
+        "description": `The "Goods Mood" logo design encapsulates the brand's aim to foster a positive image with consumers. The red color symbolizes the vibrancy and passion for selecting quality goods, while the bold, yet straightforward font showcases the brand's modern and approachable identity. The logo is crafted to be easily recognizable and versatile across various media platforms.`,
         "service": [
           "Logos"
         ],
@@ -313,7 +320,7 @@ export const tEn = {
         ],
         "best": false,
         "statistic": {
-          "hours": 6,
+          "hours": 16,
           "dev": 0,
           "des": 1
         }
@@ -321,8 +328,8 @@ export const tEn = {
       {
         "id": "08",
         "name": "Sergey Krupnov Studio",
-        "task": "Logo for a jewelry studio.",
-        "description": "",
+        "task": "Creation of an elegant logo for Sergey Krupnov's Jewelry Studio.",
+        "description": "Sergey Krupnov's Jewelry Studio's logo was designed to reflect the elegance and uniqueness of the brand. The design symbolizes the studio's craftsmanship and the high quality of its jewelry, as well as its attention to detail and creativity. The logo's elements combine classic typography with modern graphics, highlighting the exclusivity and artistic approach.",
         "service": [
           "Logos"
         ],
@@ -338,7 +345,7 @@ export const tEn = {
         ],
         "best": false,
         "statistic": {
-          "hours": 4,
+          "hours": 14,
           "dev": 0,
           "des": 1
         }
@@ -346,8 +353,8 @@ export const tEn = {
       {
         "id": "09",
         "name": "Neo Cryo",
-        "task": "Logo for a startup.",
-        "description": "",
+        "task": "Logo creation for cryptocurrency startup Neo Cryo: innovative, dynamic.",
+        "description": "The Neo Cryo cryptocurrency startup's logo was designed to represent the company's innovation and technological edge. The design features vibrant blue gradients, symbolizing transparency and trust in the digital currency realm, and a dynamic icon that represents movement and progress in the blockchain industry.",
         "service": [
           "Logos"
         ],
@@ -363,7 +370,7 @@ export const tEn = {
         ],
         "best": false,
         "statistic": {
-          "hours": 5,
+          "hours": 15,
           "dev": 0,
           "des": 1
         }
@@ -371,8 +378,8 @@ export const tEn = {
       {
         "id": "10",
         "name": "Rivulet Digital",
-        "task": "Logo for a startup.",
-        "description": "",
+        "task": "Creation of a sleek, modern logo for Rivulet Digital.",
+        "description": "For Rivulet Digital, a logo was crafted that embodies a contemporary and minimalist approach to digital technologies. The sharp lines and structured font symbolize the clarity and efficiency that are paramount in the company's digital marketing activities.",
         "service": [
           "Logos"
         ],
@@ -396,8 +403,8 @@ export const tEn = {
       {
         "id": "11",
         "name": "Backeland",
-        "task": "Banners for social media.",
-        "description": "",
+        "task": "Creation of a series of social media banners to attract attention to promotions and discounts.",
+        "description": "For the BakeLand project, a series of banners for social networks were developed to promote discounts and promotions. The main goal was to create attractive and visually consistent content that motivates subscribers to participate in promotions, use offers, and share information to receive discounts. The banners used elements of the BakeLand brand identity, including color palette, fonts, and company logo, ensuring high brand recognition and appeal on social media.",
         "service": [
           "Web design"
         ],
@@ -414,7 +421,7 @@ export const tEn = {
         ],
         "best": false,
         "statistic": {
-          "hours": 3,
+          "hours": 23,
           "dev": 0,
           "des": 1
         }
@@ -422,8 +429,8 @@ export const tEn = {
       {
         "id": "12",
         "name": "Backpack Autotrade",
-        "task": "Bot for increase trading volume on crypto exchanges",
-        "description": "",
+        "task": "Automated trading bot designed to boost trading volumes on cryptocurrency exchanges.",
+        "description": "This bot is designed for automated trading on cryptocurrency exchanges with the goal of boosting trade volumes. It enables users to efficiently increase volumes using advanced algorithms and trading strategies, thereby enhancing liquidity with minimal effort.",
         "service": [
           "Parsers"
         ],

@@ -118,8 +118,8 @@ export const tFr = {
       {
         "id": "01",
         "name": "KSD Company",
-        "task": "Création de design pour une page d'accueil.",
-        "description": "",
+        "task": "Conception d'une page d'atterrissage pour KSD Company : moderne, minimaliste.",
+        "description": "Pour KSD Company, une page d'atterrissage moderne a été conçue, visant à présenter l'entreprise et ses services. Le design de la page a été inspiré par l'esthétique du site keymap.ua, assurant la création d'une interface épurée et minimaliste, axée sur la commodité et la fonctionnalité. La page principale comprend plusieurs blocs clés : un bloc de bienvenue présentant l'entreprise aux visiteurs, une section des services détaillant ce que propose KSD Company, un portfolio avec des exemples de projets réalisés et des réussites significatives, ainsi qu'une section de contact avec un formulaire de retour pour la commodité des clients potentiels. Ce projet illustre notre approche de création de solutions numériques intuitives et esthétiquement attrayantes qui améliorent les interactions commerciales.",
         "service": [
           "Design Web"
         ],
@@ -138,15 +138,16 @@ export const tFr = {
         "statistic": {
           "hours": 18,
           "dev": 0,
-          "des": 2
+          "des": 1
         }
       },
       {
         "id": "02",
-        "name": "Aiguille Miracle",
-        "task": "Design et mise en page d'une boutique en ligne.",
-        "description": "",
+        "name": "Чудо игла",
+        "task": `Nouveau design complet pour la boutique en ligne "Чудо игла": pratique, élégant, fonctionnel.`,
+        "description": `Un design moderne et innovant a été créé de zéro pour la boutique en ligne "Чудо игла", englobant tous les aspects de l'interface utilisateur pour garantir une navigation facile et une expérience visuelle agréable. Le projet a inclus la conception d'une structure de page intuitive, de catalogues de produits attrayants, et de fonctionnalités telles que le panier d'achat et le système de filtrage des produits.`,
         "service": [
+          "Boutiques en ligne",
           "Design Web"
         ],
         "stack": [
@@ -156,7 +157,9 @@ export const tFr = {
           "JavaScript",
           "JQuery",
           "SCSS",
-          "Illustrator"
+          "Illustrator",
+          "Gulp",
+          "Figma"
         ],
         "path": "chudo-igla",
         "url": "https://chudo-igla.ru/",
@@ -167,16 +170,16 @@ export const tFr = {
         ],
         "best": false,
         "statistic": {
-          "hours": 36,
+          "hours": 136,
           "dev": 1,
-          "des": 2
+          "des": 1
         }
       },
       {
         "id": "03",
         "name": "Invoice Profi",
-        "task": "Mise en page et intégration WordPress.",
-        "description": "Notre équipe a réussi à adapter un design existant en le perfectionnant selon nos besoins et attentes. De plus, nous avons créé un lecteur audio innovant à partir de zéro, entièrement basé sur la technologie JavaScript. De manière additionnelle, nous avons développé un plugin pour le site, fournissant des fonctionnalités de tarification, de gestion d'accès et de suivi des fichiers téléchargés. Un pas important a également été la création d'un mécanisme d'envoi de factures et de rapports au format PDF pour notre système client.",
+        "task": `Développement et lancement du site "Invoice Profi" sur WordPress selon le design du client.`,
+        "description": `Le projet "Invoice Profi" comprenait le développement d'un site web basé sur le design fourni par le client et son intégration sur WordPress. La mission était de traduire fidèlement le concept visuel en un site web fonctionnel, en respectant les exigences techniques et en assurant une gestion facile du contenu.`,
         "service": [
           "Sites multipages"
         ],
@@ -185,7 +188,10 @@ export const tFr = {
           "CSS",
           "WordPress",
           "JavaScript",
-          "Node.JS"
+          "Bootstrap",
+          "JQuery",
+          "Gulp",
+          "Figma"
         ],
         "path": "invoice-profi",
         "url": "https://invoiceprofi.ru/",
@@ -196,16 +202,16 @@ export const tFr = {
         ],
         "best": true,
         "statistic": {
-          "hours": 25,
-          "dev": 2,
+          "hours": 125,
+          "dev": 1,
           "des": 1
         }
       },
       {
         "id": "04",
         "name": "Sens collective",
-        "task": "Développement d'une nouvelle page sur CMS 1C-Bitrix",
-        "description": "Notre équipe a réussi à adapter un design existant en le perfectionnant selon nos besoins et attentes. De plus, nous avons créé un lecteur audio innovant à partir de zéro, entièrement basé sur la technologie JavaScript. De manière additionnelle, nous avons développé un plugin pour le site, fournissant des fonctionnalités de tarification, de gestion d'accès et de suivi des fichiers téléchargés. Un pas important a également été la création d'un mécanisme d'envoi de factures et de rapports au format PDF pour notre système client.",
+        "task": `Ajout et intégration d'une nouvelle page au site "Sens Collective" via CMS 1C-Bitrix.`,
+        "description": `Pour "Sens Collective", une nouvelle page d'études de cas stratégiques a été ajoutée au site existant géré avec CMS 1C-Bitrix. La tâche consistait à intégrer cette nouvelle page conformément au design fourni, en veillant à ce qu'elle s'intègre parfaitement à la structure globale du site.`,
         "service": [
           "Sites Multipages"
         ],
@@ -218,7 +224,7 @@ export const tFr = {
           "Figma"
         ],
         "path": "sens-collective",
-        "url": "sens-collective.com/",
+        "url": "https://sens-collective.com/projects/strategiya/",
         "images": [
           "preview.png",
           "1.png",
@@ -226,22 +232,23 @@ export const tFr = {
         ],
         "best": true,
         "statistic": {
-          "hours": 10,
+          "hours": 75,
           "dev": 1,
-          "des": 1
+          "des": 0
         }
       },
       {
         "id": "05",
         "name": "Ivolga",
-        "task": "Développement d'une boutique en ligne à partir de zéro.",
-        "description": "",
+        "task": `Création de la boutique en ligne "Ivolga" avec intégration de CMS 1C-Bitrix, Streamerce.ru et CRM.`,
+        "description": `Le projet pour la boutique de mode "Ivolga" comprenait la création d'une boutique en ligne sur CMS 1C-Bitrix selon le design fourni par le client. Caractéristiques incluses : catalogue de produits, collections de vêtements, compte utilisateur personnel, système de fidélité et une page de diffusion en direct intégrée avec Streamerce.ru. L'intégration des produits depuis le logiciel "1C" et un système CRM dans Bitrix24 a également été configurée.`,
         "service": [
           "Boutiques en ligne"
         ],
         "stack": [
           "HTML",
           "SCSS",
+          "Webpack",
           "JavaScript",
           "PHP",
           "1C-Bitrix",
@@ -256,16 +263,16 @@ export const tFr = {
         ],
         "best": true,
         "statistic": {
-          "hours": 45,
+          "hours": 245,
           "dev": 4,
-          "des": 2
+          "des": 0
         }
       },
       {
         "id": "06",
-        "name": "Deux Biscuits",
-        "task": "Design et développement d'une boutique en ligne.",
-        "description": "",
+        "name": "Два бисквита",
+        "task": `Développement et lancement de la boutique en ligne "Два бисквита" avec un design avancé et une fonctionnalité améliorée.`,
+        "description": `Le projet "Два бисквита" comprenait la conception et la mise en œuvre d'une boutique en ligne avec un design visuel attrayant et une interface utilisateur améliorée. Les principaux objectifs du design étaient d'attirer l'attention sur les produits, d'améliorer l'interaction des utilisateurs avec le site et d'augmenter les conversions. Des technologies avancées telles que AJAX ont été utilisées pour le chargement dynamique de contenu, rendant le site plus interactif et convivial pour les utilisateurs.`,
         "service": [
           "Boutiques en ligne",
           "Design Web"
@@ -288,16 +295,16 @@ export const tFr = {
         ],
         "best": false,
         "statistic": {
-          "hours": 28,
-          "dev": 2,
-          "des": 2
+          "hours": 278,
+          "dev": 1,
+          "des": 1
         }
       },
       {
         "id": "07",
         "name": "Goods Mood",
-        "task": "Logo pour une boutique.",
-        "description": "",
+        "task": `Conception du logo "Goods Mood": énergique, moderne, mémorable.`,
+        "description": `La conception du logo "Goods Mood" reflète la volonté de la marque de créer une image positive aux yeux des clients. La couleur rouge symbolise l'activité et la passion pour le choix des produits de qualité, tandis que la police d'écriture grasse et simple illustre la modernité et l'accessibilité de la marque. Le logo est conçu pour être facilement identifiable et adaptable à tous types de médias.`,
         "service": [
           "Logos"
         ],
@@ -313,7 +320,7 @@ export const tFr = {
         ],
         "best": false,
         "statistic": {
-          "hours": 6,
+          "hours": 16,
           "dev": 0,
           "des": 1
         }
@@ -321,8 +328,8 @@ export const tFr = {
       {
         "id": "08",
         "name": "Studio de Sergey Krupnov",
-        "task": "Logo pour un studio de joaillerie.",
-        "description": "",
+        "task": "Création d'un logo élégant pour l'atelier de joaillerie de Sergey Krupnov.",
+        "description": "Le logo de la joaillerie de Sergey Krupnov a été conçu pour refléter l'élégance et l'unicité de la marque. Le design symbolise le savoir-faire de l'atelier et la haute qualité de ses bijoux, ainsi que son attention aux détails et sa créativité. Les éléments du logo associent une typographie classique à des graphismes modernes, soulignant l'exclusivité et l'approche artistique.",
         "service": [
           "Logos"
         ],
@@ -338,7 +345,7 @@ export const tFr = {
         ],
         "best": false,
         "statistic": {
-          "hours": 4,
+          "hours": 14,
           "dev": 0,
           "des": 1
         }
@@ -346,8 +353,8 @@ export const tFr = {
       {
         "id": "09",
         "name": "Néo Cryo",
-        "task": "Logo pour une startup.",
-        "description": "",
+        "task": "Création d'un logo pour le startup Neo Cryo en cryptomonnaie : innovant, dynamique.",
+        "description": "Le logo du startup Neo Cryo dans le secteur des cryptomonnaies a été conçu pour représenter l'innovation et le caractère technologique de l'entreprise. Le design comprend des dégradés de bleu vifs, symbolisant la transparence et la confiance dans le domaine de la monnaie numérique, ainsi qu'une icône dynamique qui représente le mouvement et le progrès dans l'industrie de la blockchain.",
         "service": [
           "Logos"
         ],
@@ -363,7 +370,7 @@ export const tFr = {
         ],
         "best": false,
         "statistic": {
-          "hours": 5,
+          "hours": 15,
           "dev": 0,
           "des": 1
         }
@@ -371,8 +378,8 @@ export const tFr = {
       {
         "id": "10",
         "name": "Rivulet Digital",
-        "task": "Logo pour une startup.",
-        "description": "",
+        "task": "Création d'un logo épuré et moderne pour Rivulet Digital.",
+        "description": "Pour Rivulet Digital, un logo a été conçu pour incarner une approche contemporaine et minimaliste des technologies numériques. Les lignes nettes et la police structurée symbolisent la clarté et l'efficacité qui sont essentielles dans les activités de marketing numérique de l'entreprise.",
         "service": [
           "Logos"
         ],
@@ -396,8 +403,8 @@ export const tFr = {
       {
         "id": "11",
         "name": "Backeland",
-        "task": "Bannières pour les réseaux sociaux.",
-        "description": "",
+        "task": "Création d'une série de bannières pour les réseaux sociaux pour attirer l'attention sur les promotions et les réductions.",
+        "description": "Pour le projet BakeLand, une série de bannières pour les réseaux sociaux a été développée pour promouvoir les réductions et les promotions. L'objectif principal était de créer un contenu attrayant et visuellement cohérent qui motive les abonnés à participer aux promotions, à utiliser les offres et à partager des informations pour bénéficier de réductions. Les bannières utilisaient des éléments de l'identité visuelle de BakeLand, notamment la palette de couleurs, les polices de caractères et le logo de l'entreprise, assurant une reconnaissance de marque élevée et un attrait sur les réseaux sociaux.",
         "service": [
           "Design Web"
         ],
@@ -414,7 +421,7 @@ export const tFr = {
         ],
         "best": false,
         "statistic": {
-          "hours": 3,
+          "hours": 23,
           "dev": 0,
           "des": 1
         }
@@ -423,7 +430,7 @@ export const tFr = {
         "id": "12",
         "name": "Backpack Autotrade",
         "task": "Bot pour augmenter le volume sur une bourse de cryptomonnaies.",
-        "description": "",
+        "description": "Ce bot est conçu pour le trading automatisé sur les échanges de cryptomonnaies afin d'augmenter le volume des échanges. Il permet aux utilisateurs d'accroître efficacement les volumes à l'aide d'algorithmes avancés et de stratégies de trading, améliorant ainsi la liquidité avec un effort minimal.",
         "service": [
           "Parsers"
         ],
