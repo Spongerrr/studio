@@ -43,7 +43,7 @@ export const Hero = observer(() => {
             ))}
           </motion.h1>
           <ViewButton />
-          <Statistic team={25} projects={34} experience={126} />
+          <Statistic team={25} projects={12} experience={126} />
         </div>
       </div>
     </Container>
