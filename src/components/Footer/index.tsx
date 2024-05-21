@@ -12,9 +12,9 @@ export const Footer = () => {
   return (
     <div className={s.wrapper}>
       <div className={s.socials}>
-        <Link href='#'>
-          <img src='/socials/be.png' alt='behance' />
-        </Link>
+        <Link href='https://workspace.ru/contractors/penguin-studio'  target='_blank'>
+          <img src='https://workspace.ru/local/tools/verification.php?code=21df1b48d9b31553b6ffc6c469739af2&type=ver4' alt='Мы на Workspace' />
+          </Link>
         <Link href='https://www.linkedin.com/company/penguin-studio-development/'>
           <img src='/socials/in.png' alt='linkedin' />
         </Link>
@@ -69,6 +69,6 @@ export const Footer = () => {
           </motion.footer>
         }
       </AnimatePresence>
-    </div >
+    </div>
   )
 }

@@ -6,6 +6,8 @@ import { Analytics } from '@vercel/analytics/react'
 
 import '@/styles/globals.scss'
 
+var WORKSPACE_FERIFICATION_CODE = '21df1b48d9b31553b6ffc6c469739af2'
+
 export const viewport: Viewport = {
   maximumScale: 1,
   userScalable: false
